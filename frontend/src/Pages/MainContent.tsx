@@ -1,0 +1,104 @@
+import { useEffect, useState } from "react"
+import { AddContent } from "../components/AddContent"
+import { Button } from "../components/Button"
+import { Card } from "../components/Card"
+import { PlusIcon } from "../icons/PlusIcon"
+import { Shareicon } from "../icons/ShareIcon"
+import { Sidebar } from "../components/Sidebar"
+import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from "recoil"
+import { fetchData, loadable } from "../Atoms/RecoilAtoms"
+import { HeaderData } from "../components/Header"
+import { Popup } from "../components/Popup"
+import { LoadingPage } from "./LoadingPage"
+
+interface dataTypes {
+  title?:any,
+  link:string,
+  type:string
+  username?:string
+  _id?:any
+  isDeletable?: boolean;
+}
+
+
+export function MainContent() {
+  const[isOpen,setIsOpen]=useState(false)
+  const[isOpenShare,setIsOpenShare]=useState(false)
+  const usersLoadable = useRecoilValueLoadable(fetchData);
+  const[open,setOpen]=useState(true)
+  const[user,setUser]=useState(" ")
+  const[loading,setLoading]=useRecoilState(loadable)
+  useEffect(()=>{
+
+    const username = usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
+    ? usersLoadable.contents[0].userId?.username
+    : "";
+
+    setUser(username)
+  
+  },[])
+ 
+ setTimeout(() => {
+  setLoading(true)
+ }, 6000);
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (window.innerWidth < 800) setOpen(!open);
+    
+      else setOpen(open)
+    };
+
+    updateSize(); 
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
+
+  return (
+    <div className={`bg-[#EBEBF5]  min-h-screen    w-auto relative `}>
+
+<div  className={` ${
+        open ? "w-52" : "w-12"
+      } fixed z-1  opacity-100  bg-white top-0 left-0 min-h-screen  transition-property: all duration-300 ease-in  border-r-gray-300 border-r-1 `}>
+            <Sidebar open={open} setOpen={()=>{
+              setOpen(!open)
+            }} user={user} />
+         </div>
+         <div  className={ `absolute   left-48   w-4/5 `}>
+      <div>
+          <AddContent isOpen={isOpen} onClose={()=>{
+            setIsOpen(false)
+          }}/>
+         </div>
+         <div>
+        <Popup isOpenShare={isOpenShare} onClose={()=>{
+            setIsOpenShare(false)
+          }}/>
+         </div>
+          <div className=" flex  justify-end">
+          <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
+          </div>
+       
+    
+     <div className={` ${!open ? "-ml-28":"-ml-40  lg:ml-12 "} transition-property: all duration-300 ease-in `}>
+     {user && (
+          <div className="p-2 text-4xl  font-bold">
+            <span>Welcome, </span> <span className="text-[#5046E4]">{user}!!!</span>
+          </div>
+        )}
+     </div>
+      <div className={` ${!open ? "-ml-24":"-ml-40  lg:ml-12 "}  min-h-screen  flex  gap-8 p-8 bg-[#F4F4FC] mr-8 rounded-3xl w-full   flex-wrap  `}>
+     
+      {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
+<Card title={title} link={link} type={type} id={_id}   isDeletable={true} />
+)) : <LoadingPage/>}
+   
+      </div>
+      </div>  
+    </div>
+
+  )
+}
+
+
