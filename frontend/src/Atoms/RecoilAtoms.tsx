@@ -1,5 +1,5 @@
-import { atom, atomFamily, selector, selectorFamily, useRecoilState } from "recoil";
-import axios, { Axios } from "axios";
+import { atom, selector } from "recoil";
+import axios  from "axios";
 import { BACKEND_URL } from "../config";
 
 export const Username=atom({

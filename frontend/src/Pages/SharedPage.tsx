@@ -12,9 +12,7 @@ interface datatypes{
     _id:string
     isDeletable?: boolean;
 }
-interface userTypes{
-    username:string
-}
+
 
 export function SharedPage(){
     const {sharelink}=useParams();

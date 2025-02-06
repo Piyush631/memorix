@@ -18,7 +18,7 @@ export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:a
   const navigate = useNavigate();
   const [selectedType, setSelectedType] = useRecoilState(selectContent);
   const [, setRefreshKey] = useRecoilState(refreshState);
-  const[loading,setLoading]=useRecoilState(loadable)
+  const[,setLoading]=useRecoilState(loadable)
   // Trigger refresh when selectedType changes
   useEffect(() => {
     setLoading(true)

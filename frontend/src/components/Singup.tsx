@@ -4,8 +4,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios'
 import { useState } from "react";
 
-import { Bounce, toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import {  toast } from "react-toastify";
+
 import { BACKEND_URL } from "../config";
 const FormSchema=z.object({
     username:z.string().min(5,"Username must be at least 4 characters long").max(20),
@@ -25,7 +25,7 @@ const{register,
 
 const [username,setUsername]=useState(" ")
 const [password,setPassword]=useState(" ")
-const navigate=useNavigate();
+
 const onSubmit=(data:FormData)=>{
     console.log(data)
  

@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react"
 import { AddContent } from "../components/AddContent"
-import { Button } from "../components/Button"
+
 import { Card } from "../components/Card"
-import { PlusIcon } from "../icons/PlusIcon"
-import { Shareicon } from "../icons/ShareIcon"
+
 import { Sidebar } from "../components/Sidebar"
-import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from "recoil"
+import { useRecoilState, useRecoilValueLoadable } from "recoil"
 import { fetchData, loadable } from "../Atoms/RecoilAtoms"
 import { HeaderData } from "../components/Header"
 import { Popup } from "../components/Popup"

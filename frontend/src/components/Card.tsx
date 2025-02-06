@@ -3,9 +3,9 @@ import { Shareicon } from "../icons/ShareIcon";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 import { FacebookEmbed, InstagramEmbed ,PinterestEmbed,XEmbed,YouTubeEmbed} from 'react-social-media-embed';
-import { useRecoilState, useRecoilValueLoadable } from "recoil";
-import { cardId, refreshState} from "../Atoms/RecoilAtoms";
-import { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import {  refreshState} from "../Atoms/RecoilAtoms";
+
 import { toast } from "react-toastify";
 interface CardProps {
     title:string,
@@ -17,7 +17,7 @@ interface CardProps {
 }
 
 export function Card({ title, link, type, id,  isDeletable }: CardProps) {
-    const [card, setCard] = useRecoilState(cardId);
+   
     const [, setRefreshKey] = useRecoilState(refreshState);
 
     async function handleDelete() {
