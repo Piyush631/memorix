@@ -6,6 +6,7 @@ import { MainContent } from "./Pages/MainContent"
 import { BrowserRouter , Routes,Route } from 'react-router-dom';
 import { Bounce, ToastContainer} from 'react-toastify';
 import { SharedPage } from "./Pages/SharedPage";
+import { Notfound } from "./Pages/NotFound";
 
 function App() {
  
@@ -22,6 +23,7 @@ return (
       <Route path="/dashboard" element={<MainContent/>}/>
 
       <Route path="/share/:sharelink" element={<SharedPage/>}/>
+      <Route path="*" element={<Notfound/>}/>
     </Routes>
     
     </BrowserRouter>

@@ -23,7 +23,7 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
     async function handleDelete() {
         if( isDeletable)
         {
-            await axios.delete(`http://localhost:3000/api/v1/content?id=${id}`, {
+            await axios.delete(`https://memorix.onrender.com/api/v1/content?id=${id}`, {
                 headers: {
                     "Authorization": localStorage.getItem("authorization"),
                 }

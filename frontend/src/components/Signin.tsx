@@ -95,7 +95,7 @@ return (
                 
                  </button>
         </form>
-        <div className="mt-4 flex justify-center text-gray-700">Did not have an account?  <span className="text-[#5046E4]">&nbsp; Sign up</span></div>
+        <div className="mt-4 flex justify-center text-gray-700">Did not have an account?  <a href="/signup"> <span className="text-[#5046E4]">&nbsp; Sign up</span></a></div>
         </div>
    
     </div>

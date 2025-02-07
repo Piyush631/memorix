@@ -24,7 +24,7 @@ export function SharedPage(){
         try{
             setLoading(true)
      
-            const response =await axios.get(`http://localhost:3000/api/v1/brain?hash=${sharelink}`)
+            const response =await axios.get(`https://memorix.onrender.com/api/v1/brain?hash=${sharelink}`)
             if(response?.data?.content){
            
                 setData(response.data.content)

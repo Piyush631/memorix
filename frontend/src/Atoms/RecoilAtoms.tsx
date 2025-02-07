@@ -1,6 +1,6 @@
 import { atom, selector } from "recoil";
 import axios  from "axios";
-import { BACKEND_URL } from "../config";
+
 
 export const Username=atom({
     key:"username",
@@ -37,8 +37,8 @@ export const fetchData=selector({
       
         try{
             const url = type === "all" 
-        ? `${BACKEND_URL}/api/v1/content`
-        : `${BACKEND_URL}/api/v1/refresh?type=${type}`;
+        ? `https://memorix.onrender.com/api/v1/content`
+        : `https://memorix.onrender.com/api/v1/refresh?type=${type}`;
 
         const response=await axios.get(url,{
             headers:{

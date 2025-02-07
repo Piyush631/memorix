@@ -4,7 +4,7 @@ import { BACKEND_URL } from "../config";
 export  async function StopSharing(){
 
     try{
-        await axios.post(`${BACKEND_URL}/api/v1/brain/sharelink`,{
+        await axios.post(`https://memorix.onrender.com/api/v1/brain/sharelink`,{
             share:false
         },{
             headers:{

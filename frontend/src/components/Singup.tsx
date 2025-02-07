@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import {  toast } from "react-toastify";
 
-import { BACKEND_URL } from "../config";
+
 const FormSchema=z.object({
     username:z.string().min(5,"Username must be at least 4 characters long").max(20),
     password:z.string().min(6,"Password must be at least 6 characters long")
@@ -44,7 +44,7 @@ function getpassword(event:any ){
 async function submitdata() {
     try {
         setLoading(true)
-        const response = await axios.post(`${BACKEND_URL}/api/v1/signup`, {
+        const response = await axios.post(`https://memorix.onrender.comss/api/v1/signup`, {
             username, // Ensure these variables are defined
             password
         });
