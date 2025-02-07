@@ -5,7 +5,7 @@ import { InputField } from "./InputField";
 import axios from "axios";
 import { useRecoilState } from "recoil";
 import { refreshState } from "../Atoms/RecoilAtoms";
-import { BACKEND_URL } from "../config";
+
 
 // Define props type for better TypeScript support
 interface Data {
@@ -35,7 +35,7 @@ export function AddContent({ isOpen, onClose }: Data) {
 
     try {
       await axios.post(
-        `${BACKEND_URL}/api/v1/content`,
+        `https://memorix.onrender.com/api/v1/content`,
         { link, type, title },
         { headers: { Authorization: localStorage.getItem("authorization") } }
       );
