@@ -87,7 +87,7 @@ export function MainContent() {
           </div>
         )}
      </div>
-      <div className={` ${!open ? "-ml-24":"-ml-40  lg:ml-12 "}  min-h-screen  flex  gap-8 p-8 bg-[#F4F4FC] mr-8 rounded-3xl w-auto   flex-wrap  `}>
+      <div className={` ${!open ? "-ml-24":"-ml-40  lg:ml-12 "}  min-h-screen  flex  gap-9 p-9 bg-[#F4F4FC] mr-auto rounded-3xl min-w-screen   flex-wrap  `}>
      
       {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
 <Card title={title} link={link} type={type} id={_id}   isDeletable={true} />

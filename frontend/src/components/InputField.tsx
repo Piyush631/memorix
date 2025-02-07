@@ -9,7 +9,7 @@ export function InputField({placeholder,references}:inputprops){
     <div className="m-2 p-2  rounded-xl ">
 <input 
   ref={references} 
-  className="py-2 rounded-lg border-2 focus:outline-none border-gray-400 px-2 w-64 bg-gray-200 focus:border-blue-400" 
+  className="py-2 rounded-lg border-2 focus:outline-none border-gray-400 px-2  w-56 md:w-64 bg-gray-200 focus:border-blue-400" 
   type="text" 
   placeholder={placeholder} 
 />    </div>

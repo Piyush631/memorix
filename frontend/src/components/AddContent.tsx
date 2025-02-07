@@ -82,15 +82,15 @@ export function AddContent({ isOpen, onClose }: Data) {
 
         
               <div className="mt-1 flex px-6 flex-col items-center">
-                <div className="text-3xl font-semibold">Add Content</div>
+                <div className="text-2xl md:text-3xl font-semibold">Add Content</div>
 
         
                 <InputField references={titleRef} placeholder="Title" />
 
-                {/* Type Selection Dropdown */}
+              
                 <select
                   onChange={(e) => setType(e.target.value)}
-                  className="py-2 rounded-lg border-2 focus:outline-none border-gray-400 px-2 w-64 bg-gray-200 focus:border-blue-400"
+                  className="py-2 rounded-lg border-2 focus:outline-none border-gray-400 px-2  w-56 md:w-64 bg-gray-200 focus:border-blue-400"
                 >
                   <option value="">None</option>
                   <option value="Youtube">YouTube</option>
@@ -107,7 +107,7 @@ export function AddContent({ isOpen, onClose }: Data) {
                 <input
                   type="text"
                   placeholder="Type and press Enter to add Tag"
-                  className="py-2 rounded-lg border-2 focus:outline-none border-gray-400 px-2 w-64 bg-gray-200 focus:border-blue-400"
+                  className="py-2 rounded-lg border-2 focus:outline-none border-gray-400 px-2 w-56 md:64 bg-gray-200 focus:border-blue-400"
                 />
 
            
