@@ -44,7 +44,7 @@ function getpassword(event:any ){
 async function submitdata() {
     try {
         setLoading(true)
-        const response = await axios.post(`https://memorix.onrender.comss/api/v1/signup`, {
+        const response = await axios.post(`https://memorix.onrender.com/api/v1/signup`, {
             username, // Ensure these variables are defined
             password
         });

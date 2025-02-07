@@ -7,7 +7,6 @@ import { useRecoilState } from "recoil";
 import { refreshState } from "../Atoms/RecoilAtoms";
 
 
-// Define props type for better TypeScript support
 interface Data {
   isOpen: boolean;
   onClose: () => void;
@@ -41,8 +40,7 @@ export function AddContent({ isOpen, onClose }: Data) {
       );
 
       await refreshContent();
-     // await refreshSelector();
-      // Close modal
+
       onClose();
     } catch (error) {
       console.error("Error adding content:", error);
@@ -50,14 +48,14 @@ export function AddContent({ isOpen, onClose }: Data) {
     }
   }
 
-  // ✅ Function to fetch the latest content and update Recoil state
+  //  Function to fetch the latest content and update Recoil state
   async function refreshContent() {
     try {
       const response = await axios.get(`https://memorix.onrender.com/api/v1/content`, {
         headers: { Authorization: localStorage.getItem("authorization") },
       });
 
-      //setContent(response.data.data);
+   
       response.data.data
       setRefreshKey((prev) => prev + 1);
       
