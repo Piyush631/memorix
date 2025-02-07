@@ -80,11 +80,11 @@ export function AddContent({ isOpen, onClose }: Data) {
                 <Closeicon />
               </div>
 
-              {/* Form Content */}
+        
               <div className="mt-1 flex px-6 flex-col items-center">
                 <div className="text-3xl font-semibold">Add Content</div>
 
-                {/* Title Input */}
+        
                 <InputField references={titleRef} placeholder="Title" />
 
                 {/* Type Selection Dropdown */}
@@ -110,7 +110,7 @@ export function AddContent({ isOpen, onClose }: Data) {
                   className="py-2 rounded-lg border-2 focus:outline-none border-gray-400 px-2 w-64 bg-gray-200 focus:border-blue-400"
                 />
 
-                {/* Submit Button */}
+           
                 <button
                   className="py-2 rounded-lg focus:outline-none px-2 w-32 bg-[#6f65f1] cursor-pointer hover:bg-[#5a5692] text-white text-xl mt-3"
                   onClick={addContent}

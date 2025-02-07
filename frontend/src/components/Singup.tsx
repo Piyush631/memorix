@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useState } from "react";
 
 import {  toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 
 const FormSchema=z.object({
@@ -14,6 +15,7 @@ const FormSchema=z.object({
 type FormData=z.infer<typeof FormSchema>
 export function Signup(){
   const [loading,setLoading]=useState(true)
+  const navigate=useNavigate();
 const{register,
     handleSubmit,
     formState:{errors} ,
@@ -53,6 +55,7 @@ async function submitdata() {
             toast.success("Successfull Sign up") // Logs the data property of the response
          
             setLoading(false)
+            navigate("/signin")
         
        
     } catch (error:any) {      
