@@ -55,7 +55,7 @@ export function MainContent() {
 
 
   return (
-    <div className={`bg-[#EBEBF5]    w-64 md:w-auto relative `}>
+    <div className={`bg-[#EBEBF5]    w-56 md:w-auto relative `}>
 
 <div  className={` ${
         open ? "w-52" : "w-12"
