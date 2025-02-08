@@ -64,7 +64,7 @@ export function MainContent() {
               setOpen(!open)
             }} user={user} />
          </div>
-         <div  className={ `absolute border-red-800   border-2 left-48    w-4/5 `}>
+         <div  className={ ` ${!open ? "-ml-28":"-ml-32  lg:ml-12 "}  absolute border-red-800   border-2 left-48    w-4/5 `}>
       <div>
           <AddContent isOpen={isOpen} onClose={()=>{
             setIsOpen(false)
