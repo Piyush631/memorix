@@ -75,7 +75,9 @@ export function MainContent() {
             setIsOpenShare(false)
           }}/>
          </div>
-      
+          <div className=" flex  w-64 md:w-full justify-end">
+          <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
+          </div>
        
     
      <div className={` ${!open ? "-ml-28":"-ml-32  lg:ml-12 "}  border-amber-300 border-2 transition-property: all duration-300 ease-in `}>
