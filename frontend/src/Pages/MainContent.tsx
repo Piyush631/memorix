@@ -55,47 +55,71 @@ export function MainContent() {
 
 
   return (
-    <div className={`bg-[#EBEBF5]    md:w-auto relative `}>
-
-<div  className={` ${
+    <div className="bg-[#EBEBF5] relative min-h-screen">
+    <div
+      className={`${
         open ? "w-52" : "w-12"
-      } fixed z-1  opacity-100  bg-white top-0 left-0  h-auto border-b-gray-300  transition-property: all duration-300 ease-in  border-r-gray-300 border-r-1 `}>
-            <Sidebar open={open} setOpen={()=>{
-              setOpen(!open)
-            }} user={user} />
-         </div>
-         <div  className={ `absolute border-red-800   border-2 left-48   w-1/2  `}>
-      <div>
-          <AddContent isOpen={isOpen} onClose={()=>{
-            setIsOpen(false)
-          }}/>
-         </div>
-         <div>
-        <Popup isOpenShare={isOpenShare} onClose={()=>{
-            setIsOpenShare(false)
-          }}/>
-         </div>
-          <div className=" flex  w-64 md:w-full justify-end">
-          <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
-          </div>
-       
-    
-     <div className={` ${!open ? "-ml-28":"-ml-32  lg:ml-12 "}  border-amber-300 border-2 transition-property: all duration-300 ease-in `}>
-     {user && (
-          <div className="p-2 text-4xl  font-bold">
-            <span>Welcome, </span> <span className="text-[#5046E4]">{user}!!!</span>
+      } fixed z-10 bg-white top-0 left-0 h-screen border-r border-gray-300 transition-all duration-300 ease-in-out`}
+    >
+      <Sidebar
+        open={open}
+        setOpen={() => setOpen(!open)}
+        user={user}
+      />
+    </div>
+  
+    <div
+      className={`${
+        open ? "ml-52" : "ml-12"
+      } w-full transition-all duration-300 ease-in-out`}
+    >
+      <div className="p-4">
+        <AddContent
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+        />
+        <Popup
+          isOpenShare={isOpenShare}
+          onClose={() => setIsOpenShare(false)}
+        />
+      </div>
+  
+      <div className="flex justify-end p-4">
+        <HeaderData
+          setIsOpen={setIsOpen}
+          setIsOpenShare={setIsOpenShare}
+        />
+      </div>
+  
+      <div className="p-4">
+        {user && (
+          <div className="text-2xl font-bold">
+            <span>Welcome, </span>
+            <span className="text-[#5046E4]">{user}!!!</span>
           </div>
         )}
-     </div>
-      <div className={` ${!open ? "-ml-32":"-ml-44  lg:ml-12 "}  min-h-screen border-green-500 border-2   flex  gap-5 p-6 bg-[#F4F4FC] mr-auto rounded-3xl w-64 md:w-full  flex-wrap  `}>
-     
-      {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
-<Card title={title} link={link} type={type} id={_id}   isDeletable={true} />
-)) : <LoadingPage/>}
-   
       </div>
-      </div>  
+  
+      <div className="p-6 flex flex-wrap gap-5 bg-[#F4F4FC] rounded-3xl">
+        {loading ? (
+          usersLoadable.state === "hasValue" &&
+          usersLoadable.contents.map(({ title, link, type, _id }: dataTypes) => (
+            <Card
+              key={_id}
+              title={title}
+              link={link}
+              type={type}
+              id={_id}
+              isDeletable={true}
+            />
+          ))
+        ) : (
+          <LoadingPage />
+        )}
+      </div>
     </div>
+  </div>
+  
 
   )
 }
