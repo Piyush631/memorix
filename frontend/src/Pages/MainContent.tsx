@@ -59,7 +59,7 @@ export function MainContent() {
 
 <div  className={` ${
         open ? "w-52" : "w-12"
-      } fixed z-1  opacity-100  bg-white top-0 left-0 border-2 border-red-700 h-auto border-b-gray-300  transition-property: all duration-300 ease-in  border-r-gray-300 border-r-1 `}>
+      } fixed z-1  opacity-100  bg-white top-0 left-0 border-2 border-black h-auto border-b-gray-300  transition-property: all duration-300 ease-in  border-r-gray-300 border-r-1 `}>
             <Sidebar open={open} setOpen={()=>{
               setOpen(!open)
             }} user={user} />
