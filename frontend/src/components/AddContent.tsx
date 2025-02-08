@@ -70,18 +70,18 @@ export function AddContent({ isOpen, onClose }: Data) {
       {isOpen && (
         <div>
         
-          <div className="h-screen w-full bg-gray-400 top-0 left-0 fixed flex items-center justify-center opacity-60"></div>
+          <div className="h-full w-full bg-gray-400 top-0 left-0 fixed flex items-center justify-center opacity-60"></div>
 
           {/* Modal container */}
           <div className="h-screen w-full top-0 left-0 z-10 fixed flex items-center justify-center">
             <div className="bg-white p-4 rounded-md">
-              {/* Close button */}
-              <div onClick={onClose}>
+        
+              <div className="flex justify-end " onClick={onClose}>
                 <Closeicon />
               </div>
 
         
-              <div className="mt-1 flex px-6 flex-col items-center">
+              <div className="mt-1 flex px-3 md:px-6 flex-col items-center">
                 <div className="text-2xl md:text-3xl font-semibold">Add Content</div>
 
         
@@ -103,12 +103,7 @@ export function AddContent({ isOpen, onClose }: Data) {
                 {/* Link Input */}
                 <InputField references={linkRef} placeholder="Link" />
 
-                {/* Tag Input (Not yet functional) */}
-                <input
-                  type="text"
-                  placeholder="Type and press Enter to add Tag"
-                  className="py-2 rounded-lg border-2 focus:outline-none border-gray-400 px-2 w-56 md:64 bg-gray-200 focus:border-blue-400"
-                />
+           
 
            
                 <button

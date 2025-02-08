@@ -7,7 +7,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useState } from "react";
-import { BACKEND_URL } from "../config";
+
 const FormSchema=z.object({
     username:z.string().min(5,"Username must be at least 4 characters long").max(20),
     password:z.string().min(6,"Password must be at least 6 characters long")
@@ -32,7 +32,7 @@ const{register,
    
 }
 async  function fetchUser(){
-    console.log(BACKEND_URL)
+   
     try {
         setLoading(false)
         const response: any = await axios.post(`https://memorix.onrender.com/api/v1/signin`,{

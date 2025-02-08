@@ -59,7 +59,7 @@ export function MainContent() {
 
 <div  className={` ${
         open ? "w-52" : "w-12"
-      } fixed z-1  opacity-100  bg-white top-0 left-0 min-h-screen  transition-property: all duration-300 ease-in  border-r-gray-300 border-r-1 `}>
+      } fixed z-1  opacity-100  bg-white top-0 left-0 h-screen border-b-gray-300  transition-property: all duration-300 ease-in  border-r-gray-300 border-r-1 `}>
             <Sidebar open={open} setOpen={()=>{
               setOpen(!open)
             }} user={user} />
@@ -87,7 +87,7 @@ export function MainContent() {
           </div>
         )}
      </div>
-      <div className={` ${!open ? "-ml-24":"-ml-40  lg:ml-12 "}  min-h-screen  flex  gap-8 p-8 bg-[#F4F4FC] mr-auto rounded-3xl w-auto   flex-wrap  `}>
+      <div className={` ${!open ? "-ml-32":"-ml-44  lg:ml-12 "}  min-h-screen  flex  gap-5 p-6 bg-[#F4F4FC] mr-auto rounded-3xl max-w-screen min-w-auto  flex-wrap  `}>
      
       {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
 <Card title={title} link={link} type={type} id={_id}   isDeletable={true} />
