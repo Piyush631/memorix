@@ -55,7 +55,7 @@ export function MainContent() {
 
 
   return (
-    <div className={`bg-[#EBEBF5]      w-auto relative `}>
+    <div className={`bg-[#EBEBF5]    w-64 md:w-auto relative `}>
 
 <div  className={` ${
         open ? "w-52" : "w-12"
@@ -75,7 +75,7 @@ export function MainContent() {
             setIsOpenShare(false)
           }}/>
          </div>
-          <div className=" flex  justify-end">
+          <div className=" flex  w-64 md:w-full justify-end">
           <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
           </div>
        
@@ -87,7 +87,7 @@ export function MainContent() {
           </div>
         )}
      </div>
-      <div className={` ${!open ? "-ml-32":"-ml-44  lg:ml-12 "}  min-h-screen  flex  gap-5 p-6 bg-[#F4F4FC] mr-auto rounded-3xl w-56 md:w-full  flex-wrap  `}>
+      <div className={` ${!open ? "-ml-32":"-ml-44  lg:ml-12 "}  min-h-screen  flex  gap-5 p-6 bg-[#F4F4FC] mr-auto rounded-3xl w-64 md:w-full  flex-wrap  `}>
      
       {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
 <Card title={title} link={link} type={type} id={_id}   isDeletable={true} />
