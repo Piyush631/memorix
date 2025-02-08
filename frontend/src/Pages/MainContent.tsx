@@ -64,7 +64,7 @@ export function MainContent() {
               setOpen(!open)
             }} user={user} />
          </div>
-         <div  className={ `absolute border-red-800   overflow-hidden border-2 left-48   w-auto `}>
+         <div  className={ `absolute border-red-800   border-2 left-48   w-auto  `}>
       <div>
           <AddContent isOpen={isOpen} onClose={()=>{
             setIsOpen(false)
@@ -80,7 +80,7 @@ export function MainContent() {
           </div>
        
     
-     <div className={` ${!open ? "-ml-28":" "}  border-amber-300 border-2 transition-property: all duration-300 ease-in `}>
+     <div className={` ${!open ? "-ml-28":"-ml-32  lg:ml-12 "}  border-amber-300 border-2 transition-property: all duration-300 ease-in `}>
      {user && (
           <div className="p-2 text-4xl  font-bold">
             <span>Welcome, </span> <span className="text-[#5046E4]">{user}!!!</span>
