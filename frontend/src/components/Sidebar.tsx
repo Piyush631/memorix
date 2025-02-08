@@ -34,9 +34,7 @@ export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:a
 
   return (
     <div>
-      <div className="flex gap-2 mt-2 p-3 items-center 
-
-">
+      <div className="flex gap-2 mt-2 p-3 items-center  h-auto">
         <div className={!open ? "-translate-x-32" : " "}>
           <BrainLogo />
         </div>

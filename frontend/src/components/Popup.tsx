@@ -61,7 +61,7 @@ function extractPath(url: any) {
 
 <div className="h-screen w-full top-0 left-0 z-10 fixed flex flex-col items-center justify-center">
   
-  <div className="flex flex-col gap-2 justify-center items-center  rounded-lg bg-white  h-28 w-96  ">
+  <div className="flex flex-col gap-2 justify-center items-center  rounded-lg bg-white  h-28 w-72 md:w-96  ">
   <div  className="ml-80 cursor-pointer" onClick={onClose}>
                   <Closeicon />
                 </div>
