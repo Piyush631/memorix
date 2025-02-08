@@ -55,16 +55,16 @@ export function MainContent() {
 
 
   return (
-    <div className={`bg-[#EBEBF5]   border-2 border-amber-400 w-56 md:w-auto relative `}>
+    <div className={`bg-[#EBEBF5]    md:w-auto relative `}>
 
 <div  className={` ${
         open ? "w-52" : "w-12"
-      } fixed z-1  opacity-100  bg-white top-0 left-0 border-2 border-red-700 h-auto border-b-gray-300  transition-property: all duration-300 ease-in  border-r-gray-300 border-r-1 `}>
+      } fixed z-1  opacity-100  bg-white top-0 left-0  h-auto border-b-gray-300  transition-property: all duration-300 ease-in  border-r-gray-300 border-r-1 `}>
             <Sidebar open={open} setOpen={()=>{
               setOpen(!open)
             }} user={user} />
          </div>
-         <div  className={ `absolute   left-48   w-4/5 `}>
+         <div  className={ `absolute border-red-800   border-2 left-48   w-4/5 `}>
       <div>
           <AddContent isOpen={isOpen} onClose={()=>{
             setIsOpen(false)
@@ -75,19 +75,19 @@ export function MainContent() {
             setIsOpenShare(false)
           }}/>
          </div>
-          <div className=" flex  w-64 md:w-full justify-end">
+          <div className=" flex  w-64 md:w-full justify-end">s
           <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
           </div>
        
     
-     <div className={` ${!open ? "-ml-28":"-ml-40  lg:ml-12 "} transition-property: all duration-300 ease-in `}>
+     <div className={` ${!open ? "-ml-28":"-ml-40  lg:ml-12 "}  border-amber-300 border-2 transition-property: all duration-300 ease-in `}>
      {user && (
           <div className="p-2 text-4xl  font-bold">
             <span>Welcome, </span> <span className="text-[#5046E4]">{user}!!!</span>
           </div>
         )}
      </div>
-      <div className={` ${!open ? "-ml-32":"-ml-44  lg:ml-12 "}  min-h-screen  flex  gap-5 p-6 bg-[#F4F4FC] mr-auto rounded-3xl w-64 md:w-full  flex-wrap  `}>
+      <div className={` ${!open ? "-ml-32":"-ml-44  lg:ml-12 "}  min-h-screen border-green-500 border-2   flex  gap-5 p-6 bg-[#F4F4FC] mr-auto rounded-3xl w-64 md:w-full  flex-wrap  `}>
      
       {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
 <Card title={title} link={link} type={type} id={_id}   isDeletable={true} />
