@@ -64,7 +64,8 @@ export function MainContent() {
               setOpen(!open)
             }} user={user} />
          </div>
-        <div  className={ `  absolute border-red-800   border-2 left-48    w-4/5 `}>
+         {/* fix this error */}
+        <div  className={ `  absolute left-48    w-4/5 `}>
       <div className={`${!open ? "-ml-28":"-ml-32  lg:ml-12 "} `}>
           <AddContent isOpen={isOpen} onClose={()=>{
             setIsOpen(false)
@@ -79,15 +80,15 @@ export function MainContent() {
           <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
           </div>
        
-    
-     <div className={` ${!open ? "-ml-28":"-ml-32  lg:ml-12 "}  border-amber-300 border-2 transition-property: all duration-300 ease-in `}>
+       {/* fix this error */}
+     <div className={` ${!open ? "-ml-28":"-ml-32  lg:ml-12 "}   transition-property: all duration-300 ease-in `}>
      {user && (
           <div className="p-2 text-4xl  font-bold">
             <span>Welcome, </span> <span className="text-[#5046E4]">{user}!!!</span>
           </div>
         )}
      </div>
-      <div className={` ${!open ? "-ml-32":"-ml-44  lg:ml-12 "}  min-h-screen border-green-500 border-2   flex  gap-5 p-6 bg-[#F4F4FC] mr-auto rounded-3xl w-64 md:w-full  flex-wrap  `}>
+      <div className={` ${!open ? "-ml-32":"-ml-44  lg:ml-12 "}  min-h-screen   flex  gap-5 p-6 bg-[#F4F4FC] mr-auto rounded-3xl w-64 md:w-full  flex-wrap  `}>
      
       {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
 <Card title={title} link={link} type={type} id={_id}   isDeletable={true} />
