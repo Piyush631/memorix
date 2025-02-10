@@ -50,7 +50,7 @@ if(jwt)
     setLoading(true)
 }else{
     toast.error("invalid username and password")
-
+    setLoading(true)
 }
     
    
@@ -58,6 +58,7 @@ if(jwt)
 }catch(error)
 {
     toast.error("invalid username and password")
+    setLoading(true)
 }
 
 

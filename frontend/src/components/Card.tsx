@@ -57,27 +57,27 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
             {/* Content */}
             <div className="p-2 h-full flex justify-center items-center mt-3">
     {type === "Youtube" && (
-        <div className="  overflow-hidden" >
+        <div className="" >
             <YouTubeEmbed url={link}  />
         </div>
     )}
     {type === "Twitter" && (
-        <div className="mt-2 overflow-hidden" >
+        <div className="overflow-hidden" >
             <XEmbed url={link} />
         </div>
     )}
     {type === "Instagram" && (
-        <div className="mt-2 overflow-hidden" >
+        <div className=" overflow-hidden" >
             <InstagramEmbed url={link}  />
         </div>
     )}
     {type === "Facebook" && (
-        <div className="mt-2 overflow-hidden" >
+        <div className=" overflow-hidden" >
             <FacebookEmbed url={link}  />
         </div>
     )}
     {type === "Pinterest" && (
-        <div className="mt-2 overflow-hidden">
+        <div className=" overflow-hidden">
             <PinterestEmbed url={link}  />
         </div>
     )}

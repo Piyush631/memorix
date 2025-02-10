@@ -14,7 +14,7 @@ const FormSchema=z.object({
 })
 type FormData=z.infer<typeof FormSchema>
 export function Signup(){
-  const [loading,setLoading]=useState(true)
+  const [loading,setLoading]=useState(false)
   const navigate=useNavigate();
 const{register,
     handleSubmit,
@@ -62,9 +62,13 @@ async function submitdata() {
         if(error.status==402)
         {
             toast.error("user already exist")
+            
+            setLoading(false)
         }
         else{
             toast.error("plesae enter the valid details") 
+            
+            setLoading(false)
 
         }
     }
