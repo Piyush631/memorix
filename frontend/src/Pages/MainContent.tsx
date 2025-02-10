@@ -65,7 +65,7 @@ export function MainContent() {
             }} user={user} />
          </div>
          {/* fix this error */}
-        <div  className={ `  absolute left-48    w-4/5 `}>
+        <div  className={ `  absolute left-48  border-amber-400 border-2   w-4/5 `}>
       <div className={`${!open ? "-ml-28":"-ml-32  lg:ml-12 "} `}>
           <AddContent isOpen={isOpen} onClose={()=>{
             setIsOpen(false)
@@ -81,7 +81,7 @@ export function MainContent() {
           </div>
        
        {/* fix this error */}
-     <div className={` ${!open ? "-ml-28":"-ml-32  lg:ml-12 "}   transition-property: all duration-300 ease-in `}>
+     <div className={` ${!open ? "-ml-28":"-ml-32  lg:ml-12 "} border-red-700 border-2   transition-property: all duration-300 ease-in `}>
      {user && (
           <div className="p-2 text-4xl  font-bold">
             <span>Welcome, </span> <span className="text-[#5046E4]">{user}!!!</span>
