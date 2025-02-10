@@ -57,7 +57,7 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
             {/* Content */}
             <div className="p-2 h-full flex justify-center items-center mt-3">
     {type === "Youtube" && (
-        <div className="" >
+        <div className=" object-fill" >
             <YouTubeEmbed url={link}  />
         </div>
     )}
