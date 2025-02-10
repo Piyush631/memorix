@@ -30,8 +30,8 @@ export function MainContent() {
   useEffect(()=>{
 
     const username = usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
-    ? usersLoadable.contents[0].userId?.username
-    : "";
+    ? usersLoadable.contents[0].userId.username
+    : "piyush";
 
     setUser(username)
   console.log(username)
