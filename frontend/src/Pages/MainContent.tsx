@@ -64,7 +64,7 @@ export function MainContent() {
               setOpen(!open)
             }} user={user} />
          </div>
-         <div className="flex flex-col   p-2 m-2  h-auto w-full">
+         <div className="flex flex-col   p-1 m-1  h-auto w-full">
       <div className={`${!open ? "-ml-28":"-ml-32  lg:ml-12 "} `}>
           <AddContent isOpen={isOpen} onClose={()=>{
             setIsOpen(false)
@@ -75,12 +75,12 @@ export function MainContent() {
             setIsOpenShare(false)
           }}/>
          </div>
-                                        <div className="  left-6 flex justify-center  lg:justify-end">
-                                          <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
-                                           </div>
+         <div className="  left-16 md:left-2 flex   lg:justify-end">
+  <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
+    </div>
        
    
-                                           <div className={` left-6 rounded-xl  p-4 flex flex-wrap bg-[#F4F4FC] w-full  gap-6 pl-16`}>
+ <div className={` left-6  ml-2 rounded-xl  p-4 flex flex-wrap bg-[#F4F4FC] w-full  gap-6 pl-16`}>
      
      {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
 <Card title={title} link={link} type={type} id={_id}   isDeletable={true} />

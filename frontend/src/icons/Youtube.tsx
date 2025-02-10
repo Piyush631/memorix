@@ -10,7 +10,7 @@ export function Youtube(){
       className="your-tailwind-classes"
     >
       <g
-        fill="#d21818"
+       
         fillRule="nonzero"
         stroke="none"
         strokeWidth="1"
