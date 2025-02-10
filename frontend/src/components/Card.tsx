@@ -40,8 +40,8 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
         <div>
 
   
-        <div className="border border-gray-200 bg-white rounded-md shadow-md min-h-48 max-h-auto  min-w-64 max-w-64 flex flex-col justify-between overflow-hidden">
-            {/* Header */}
+        <div className="border border-gray-200 bg-white rounded-md shadow-md min-h-48 max-h-auto  min-w-64 max-w-64 flex flex-col justify-between ">
+        
             <div className="flex justify-between text-gray-500 p-2">
                 <div className="text-black font-medium">{title}</div>
                 <div className="flex gap-3 items-center">
@@ -68,12 +68,12 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
     )}
     {type === "Instagram" && (
         <div className="mt-2 overflow-hidden" >
-            <InstagramEmbed url={link} width={200} />
+            <InstagramEmbed url={link}  />
         </div>
     )}
     {type === "Facebook" && (
         <div className="mt-2 overflow-hidden" >
-            <FacebookEmbed url={link} width={200} />
+            <FacebookEmbed url={link}  />
         </div>
     )}
     {type === "Pinterest" && (
