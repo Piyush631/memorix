@@ -65,7 +65,7 @@ export function MainContent() {
             }} user={user} />
          </div>
          {/* fix this error */}
-        <div  className={ `  absolute   border-amber-400 border-2   w-4/5 `}>
+        <div  className={ `  absolute   border-amber-400 border-2 w-full `}>
       <div className={`${!open ? "-ml-28":"-ml-32  lg:ml-12 "} `}>
           <AddContent isOpen={isOpen} onClose={()=>{
             setIsOpen(false)
