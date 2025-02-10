@@ -25,6 +25,7 @@ export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:a
     setRefreshKey((prev) => prev + 1);
     setLoading(false)
   }, [selectedType, setRefreshKey]);
+  
 
   function logout() {
     localStorage.removeItem("authorization");

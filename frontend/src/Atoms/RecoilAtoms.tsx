@@ -47,7 +47,7 @@ export const fetchData=selector({
            
         })
       
-   
+   console.log(response.data.data)
         return response.data.data
         }catch(error)
         {

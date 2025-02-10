@@ -31,10 +31,10 @@ export function MainContent() {
 
     const username = usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
     ? usersLoadable.contents[0].userId.username
-    : "piyush";
+    : " ";
 
     setUser(username)
-  console.log(username)
+  console.log(user)
   },[])
  
  setTimeout(() => {
