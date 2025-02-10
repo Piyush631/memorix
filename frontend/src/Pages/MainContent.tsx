@@ -59,7 +59,7 @@ export function MainContent() {
 
 <div  className={` ${
         open ? "w-52" : "w-12"
-      } fixed z-1  opacity-100  bg-white top-0 left-0  h-auto border-b-gray-300  transition-property: all duration-300 ease-in  border-r-gray-300 border-r-1 `}>
+      } fixed z-1  opacity-100  bg-white top-0 left-0  h-screen border-b-gray-300   border-r-gray-300 border-r-1 `}>
             <Sidebar open={open} setOpen={()=>{
               setOpen(!open)
             }} user={user} />
@@ -75,12 +75,12 @@ export function MainContent() {
             setIsOpenShare(false)
           }}/>
          </div>
-         <div className=" flex  justify-end">
-                                           <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
+                                        <div className="  left-6 flex  justify-end">
+                                          <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
                                            </div>
        
    
-                                           <div className={`  p-5 flex flex-wrap bg-[#F4F4FC] w-full  gap-6 pl-28`}>
+                                           <div className={` left-6 rounded-xl  p-4 flex flex-wrap bg-[#F4F4FC] w-full  gap-6 pl-16`}>
      
      {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
 <Card title={title} link={link} type={type} id={_id}   isDeletable={true} />

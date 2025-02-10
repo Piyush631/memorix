@@ -39,12 +39,12 @@ export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:a
           <BrainLogo />
         </div>
 
-        <span className={`${!open ? "-translate-x-46" : ""} transition-property: all duration-300 ease-in  font-semibold text-2xl`}>
+        <span className={`${!open ? "-translate-x-46" : ""}   font-semibold text-2xl`}>
           Memorix
         </span>
         <div
           onClick={() => setOpen(!open)}
-          className={`cursor-pointer pl-2 pt-1 text-2xl flex items-center justify-center transition-property: all duration-300 ease-in ${
+          className={`cursor-pointer pl-2 pt-1 text-2xl flex items-center justify-center ${
             !open ? "-translate-x-40" : ""
           }`}
         >
@@ -52,7 +52,7 @@ export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:a
         </div>
       </div>
 
-      <div className={` ${!open ? "hidden" : "flex"} transition-property: all duration-300 ease-in flex-col justify-center items-center mt-1`}>
+      <div className={` ${!open ? "hidden" : "flex"} flex-col justify-center items-center mt-1`}>
         <img
           className="h-14 w-14 rounded-full"
           src="https://img.freepik.com/premium-vector/male-character-social-network-concept_24877-17897.jpg?w=740"
@@ -61,7 +61,7 @@ export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:a
         <div className="font-semibold text-2xl">{user}</div>
       </div>
 
-      <div className="flex flex-col gap-3 transition-property: all duration-300 ease-in ">
+      <div className="flex flex-col gap-3  ">
         <button onClick={() => setSelectedType("all")}>
           <NavIcon icon={<RiGalleryView2 />} text="All" open={open} />
         </button>

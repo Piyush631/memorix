@@ -10,7 +10,7 @@ export function NavIcon({icon,text,open}:{
             <div className={`${!open ? "-translate-x-2" :" "}  `}>
             {icon}
             </div>
-           <div className={`${!open ? "-translate-x-32" :" "}   transition-property: all duration-300 ease-in`}>
+           <div className={`${!open ? "-translate-x-32" :" "}   `}>
            {text}
            </div>
   
