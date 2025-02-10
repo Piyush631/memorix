@@ -55,7 +55,7 @@ export function MainContent() {
 
 
   return (
-    <div className={`bg-[#EBEBF5]    md:w-auto relative `}>
+    <div   className="min-h-screen bg-[#EBEBF5]    w-full  flex">
 
 <div  className={` ${
         open ? "w-52" : "w-12"
@@ -64,8 +64,7 @@ export function MainContent() {
               setOpen(!open)
             }} user={user} />
          </div>
-         {/* fix this error */}
-        <div  className={ `  absolute left-48  border-amber-400 border-2   w-4/5 `}>
+         <div className="flex flex-col   h-auto w-full">
       <div className={`${!open ? "-ml-28":"-ml-32  lg:ml-12 "} `}>
           <AddContent isOpen={isOpen} onClose={()=>{
             setIsOpen(false)
@@ -76,19 +75,19 @@ export function MainContent() {
             setIsOpenShare(false)
           }}/>
          </div>
-          <div className=" flex  w-64 md:w-full justify-end">
-          <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
-          </div>
+         <div className=" flex  justify-end">
+                                           <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
+                                           </div>
        
-       {/* fix this error */}
    
-      <div className={` ${!open ? "-ml-32":"-ml-44  lg:ml-12 "}  min-h-screen   flex  gap-5 p-6 bg-[#F4F4FC] mr-auto rounded-3xl w-64 md:w-full  flex-wrap  `}>
+                                           <div className={`  p-5 flex flex-wrap bg-[#F4F4FC] w-full  gap-6 pl-28`}>
      
-      {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
+     {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
 <Card title={title} link={link} type={type} id={_id}   isDeletable={true} />
 )) : <LoadingPage/>}
+  
+     </div>
    
-      </div>
       </div>  
     </div>
 
