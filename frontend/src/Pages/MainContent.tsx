@@ -34,7 +34,7 @@ export function MainContent() {
     : "";
 
     setUser(username)
-  
+  console.log(username)
   },[])
  
  setTimeout(() => {
@@ -75,7 +75,7 @@ export function MainContent() {
             setIsOpenShare(false)
           }}/>
          </div>
-         <div className=" flex justify-end">
+         <div className="">
   <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
     </div>
        
