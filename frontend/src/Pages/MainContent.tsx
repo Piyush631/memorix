@@ -81,13 +81,7 @@ export function MainContent() {
           </div>
        
        {/* fix this error */}
-     <div className={` ${!open ? "-ml-28":"-ml-32  lg:ml-12 "} border-red-700 border-2   transition-property: all duration-300 ease-in `}>
-     {user && (
-          <div className="p-2 text-4xl  font-bold">
-            <span>Welcome, </span> <span className="text-[#5046E4]">{user}!!!</span>
-          </div>
-        )}
-     </div>
+   
       <div className={` ${!open ? "-ml-32":"-ml-44  lg:ml-12 "}  min-h-screen   flex  gap-5 p-6 bg-[#F4F4FC] mr-auto rounded-3xl w-64 md:w-full  flex-wrap  `}>
      
       {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
