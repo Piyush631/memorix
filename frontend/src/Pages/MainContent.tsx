@@ -64,7 +64,7 @@ export function MainContent() {
               setOpen(!open)
             }} user={user} />
          </div>
-         <div className="flex flex-col   h-auto w-full">
+         <div className="flex flex-col   p-2 m-2  h-auto w-full">
       <div className={`${!open ? "-ml-28":"-ml-32  lg:ml-12 "} `}>
           <AddContent isOpen={isOpen} onClose={()=>{
             setIsOpen(false)
@@ -75,7 +75,7 @@ export function MainContent() {
             setIsOpenShare(false)
           }}/>
          </div>
-                                        <div className="  left-6 flex  justify-end">
+                                        <div className="  left-6 flex justify-center  lg:justify-end">
                                           <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
                                            </div>
        
