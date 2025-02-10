@@ -75,7 +75,7 @@ export function MainContent() {
             setIsOpenShare(false)
           }}/>
          </div>
-         <div className="  left-16 md:left-2 flex   lg:justify-end">
+         <div className="  -left-16 md:-left-2 flex   lg:justify-end">
   <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
     </div>
        

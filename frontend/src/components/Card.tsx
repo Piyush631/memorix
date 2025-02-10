@@ -40,7 +40,7 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
         <div>
 
   
-        <div className="border border-gray-200 bg-white rounded-md shadow-md min-h-48 max-h-auto  min-w-64 max-w-64 flex flex-col justify-between ">
+        <div className="border border-gray-200 bg-white rounded-md shadow-md min-h-48 max-h-auto  min-w-64 max-w-auto flex flex-col justify-between ">
         
             <div className="flex justify-between text-gray-500 p-2">
                 <div className="text-black font-medium">{title}</div>
