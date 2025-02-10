@@ -37,7 +37,10 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
     }
 
     return (
-        <div className="border border-gray-200 bg-white rounded-md shadow-md h-80 w-[229px] flex flex-col justify-between overflow-hidden">
+        <div>
+
+  
+        <div className="border border-gray-200 bg-white rounded-md shadow-md min-h-48 max-h-auto  min-w-64 max-w-64 flex flex-col justify-between overflow-hidden">
             {/* Header */}
             <div className="flex justify-between text-gray-500 p-2">
                 <div className="text-black font-medium">{title}</div>
@@ -54,32 +57,33 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
             {/* Content */}
             <div className="p-2 h-full flex justify-center items-center mt-3">
     {type === "Youtube" && (
-        <div className="  mb-24 overflow-hidden" style={{ maxHeight: "350px" }}>
-            <YouTubeEmbed url={link} width={200} height={150} />
+        <div className="  overflow-hidden" >
+            <YouTubeEmbed url={link}  />
         </div>
     )}
     {type === "Twitter" && (
-        <div className="mt-5 overflow-hidden" style={{ maxHeight: "350px" }}>
-            <XEmbed url={link} width={200} height={380} />
+        <div className="mt-2 overflow-hidden" >
+            <XEmbed url={link} />
         </div>
     )}
     {type === "Instagram" && (
-        <div className="mt-5 overflow-hidden" style={{ maxHeight: "350px" }}>
+        <div className="mt-2 overflow-hidden" >
             <InstagramEmbed url={link} width={200} />
         </div>
     )}
     {type === "Facebook" && (
-        <div className="mt-5 overflow-hidden" style={{ maxHeight: "350px" }}>
+        <div className="mt-2 overflow-hidden" >
             <FacebookEmbed url={link} width={200} />
         </div>
     )}
     {type === "Pinterest" && (
-        <div className="mt-5 overflow-hidden" style={{ maxHeight: "350px" }}>
-            <PinterestEmbed url={link} width={200} height={150} />
+        <div className="mt-2 overflow-hidden">
+            <PinterestEmbed url={link}  />
         </div>
     )}
 </div>
 
+        </div>
         </div>
     );
 }
