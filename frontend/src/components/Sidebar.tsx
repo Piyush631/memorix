@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { BrainLogo } from "../icons/Brainlogo";
 import { Twitter } from "../icons/Twitter";
 import { Youtube } from "../icons/Youtube";
@@ -8,11 +8,11 @@ import { useNavigate } from "react-router-dom";
 import { RiGalleryView2 } from "react-icons/ri";
 import { IoIosLogOut } from "react-icons/io";
 import { toast } from "react-toastify";
-import { useRecoilState, useRecoilValueLoadable } from "recoil";
+import { useRecoilState } from "recoil";
 import { Insta } from "../icons/Insta";
 import { Facebook } from "../icons/Facebook";
 import { Pinterest } from "../icons/Pintrest";
-import { fetchData, loadable, refreshState, selectContent } from "../Atoms/RecoilAtoms";
+import { loadable, refreshState, selectContent } from "../Atoms/RecoilAtoms";
 
 export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:any }) {
   const navigate = useNavigate();
