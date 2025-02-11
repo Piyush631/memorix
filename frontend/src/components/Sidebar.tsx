@@ -28,8 +28,8 @@ export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:a
     const username = usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
     ? usersLoadable.contents[0].userId.username
     : " ";
-    setNewuser(username)
-    console.log(username)
+    setNewuser("paras")
+    
     setLoading(false)
 
   }, [selectedType, setRefreshKey]);
