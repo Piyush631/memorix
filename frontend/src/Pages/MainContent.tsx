@@ -9,6 +9,7 @@ import { fetchData, loadable } from "../Atoms/RecoilAtoms"
 import { HeaderData } from "../components/Header"
 import { Popup } from "../components/Popup"
 import { LoadingPage } from "./LoadingPage"
+import { FaPlus } from "react-icons/fa6";
 
 interface dataTypes {
   title?:any,
@@ -79,16 +80,19 @@ export function MainContent() {
   <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
     </div>
        
-    <div className=" text-3xl">
-          Welcome {user}
+    <div className=" text-3xl pl-14">
+          Welcome <span className="text-blue-600">{user}!!!</span>
     </div>
  <div className={` left-6  ml-2 rounded-xl  p-4 flex flex-wrap bg-[#F4F4FC] w-full  gap-6 pl-16`}>
      
      {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
 <Card title={title} link={link} type={type} id={_id}   isDeletable={true} />
 )) : <LoadingPage/>}
-<div className="h-32 w-64 bg-amber-600">
-      <div>Please add content</div>
+<div className="h-44 w-64  flex flex-col items-center justify-center bg-gray-400">
+      <div className="text-3xl"><FaPlus /> </div>
+      <div onClick={()=>{
+                    setIsOpenShare(true)
+                  }} className="text-xl">Click to Add a Content</div>
       </div>
   
      </div>

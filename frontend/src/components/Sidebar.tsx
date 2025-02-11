@@ -19,16 +19,13 @@ export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:a
   const [selectedType, setSelectedType] = useRecoilState(selectContent);
   const [, setRefreshKey] = useRecoilState(refreshState);
   const[,setLoading]=useRecoilState(loadable)
-   const usersLoadable = useRecoilValueLoadable(fetchData);
-   const[newuser,setNewuser]=useState(" harsh")
+
+
   // Trigger refresh when selectedType changes
   useEffect(() => {
     setLoading(true)
     setRefreshKey((prev) => prev + 1);
-    const username = usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
-    ? usersLoadable.contents[0].userId.username
-    : " ";
-    setNewuser(username)
+  
     
     setLoading(false)
 
@@ -67,7 +64,7 @@ export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:a
           src="https://img.freepik.com/premium-vector/male-character-social-network-concept_24877-17897.jpg?w=740"
           alt="Profile"
         />
-        <div className="font-semibold text-2xl">{newuser} {user} </div>
+        <div className="font-semibold text-2xl"> {user} </div>
       </div>
 
       <div className="flex flex-col gap-3  ">
