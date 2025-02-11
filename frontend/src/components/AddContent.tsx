@@ -94,7 +94,7 @@ export function AddContent({ isOpen, onClose }: Data) {
                 >
                   <option value="">None</option>
                   <option value="Youtube">YouTube</option>
-                  <option value="Twitter">Twitter</option>
+            
                   <option value="Instagram">Instagram</option>
                   <option value="Pinterest">Pinterest</option>
                   <option value="Facebook">Facebook</option>
