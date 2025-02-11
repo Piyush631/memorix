@@ -47,7 +47,7 @@ export function MainContent() {
     const updateSize = () => {
       if (window.innerWidth < 800) setOpen(open);
     
-      else setOpen(!open)
+      else setOpen(open)
     };
 
     updateSize(); 
