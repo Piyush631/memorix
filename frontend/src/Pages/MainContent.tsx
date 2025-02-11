@@ -45,9 +45,9 @@ export function MainContent() {
 
   useEffect(() => {
     const updateSize = () => {
-      if (window.innerWidth < 800) setOpen(!open);
+      if (window.innerWidth < 800) setOpen(open);
     
-      else setOpen(open)
+      else setOpen(!open)
     };
 
     updateSize(); 
