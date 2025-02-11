@@ -28,6 +28,10 @@ export function MainContent() {
   const[open,setOpen]=useState(true)
   const[user,setUser]=useState(" ")
   const[loading,setLoading]=useRecoilState(loadable)
+
+ 
+ setTimeout(() => {
+  setLoading(true)
   useEffect(()=>{
 
     const username = usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
@@ -35,12 +39,9 @@ export function MainContent() {
     : " ";
 
     setUser(username)
-  console.log(user)
-  },[])
  
- setTimeout(() => {
-  setLoading(true)
- }, 6000);
+  },[])
+ }, 4000);
 
   useEffect(() => {
     const updateSize = () => {
