@@ -79,7 +79,7 @@ export function MainContent() {
   <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
     </div>
        
-    <div className="">
+    <div className=" text-3xl">
           Welcome {user}
     </div>
  <div className={` left-6  ml-2 rounded-xl  p-4 flex flex-wrap bg-[#F4F4FC] w-full  gap-6 pl-16`}>
