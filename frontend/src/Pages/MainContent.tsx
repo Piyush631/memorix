@@ -80,9 +80,7 @@ export function MainContent() {
   <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
     </div>
        
-    <div className=" text-2xl  md:text-4xl pl-28 ">
-          Welcome <span className="text-blue-600">{user}!!!</span>
-    </div>
+    
  <div className={` left-6  ml-2 rounded-xl  p-4 flex flex-wrap bg-[#F4F4FC] w-full  gap-6 pl-16`}>
      
      {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
@@ -90,7 +88,7 @@ export function MainContent() {
 )) : <LoadingPage/>}
 <div className="h-44 w-64  flex flex-col items-center justify-center bg-gray-300 rounded-xl gap-4">
       <div className="text-3xl"><FaPlus  className="text-3xl"/> </div>
-      <div onClick={()=>{setIsOpen(true)}} className="text-xl">Click to Add a Content</div>
+      <div onClick={()=>{setIsOpen(!isOpen)}} className="text-xl">Click to Add a Content</div>
       </div>
   
      </div>
