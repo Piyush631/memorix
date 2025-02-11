@@ -25,7 +25,7 @@ export function MainContent() {
   const[isOpen,setIsOpen]=useState(false)
   const[isOpenShare,setIsOpenShare]=useState(false)
   const usersLoadable = useRecoilValueLoadable(fetchData);
-  const[open,setOpen]=useState(true)
+  const[open,setOpen]=useState(false)
   const[user,setUser]=useState(" ")
   const[loading,setLoading]=useRecoilState(loadable)
   useEffect(()=>{
