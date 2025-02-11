@@ -28,7 +28,7 @@ export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:a
     const username = usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
     ? usersLoadable.contents[0].userId.username
     : " ";
-    setNewuser("paras")
+    setNewuser(username)
     
     setLoading(false)
 
@@ -67,7 +67,7 @@ export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:a
           src="https://img.freepik.com/premium-vector/male-character-social-network-concept_24877-17897.jpg?w=740"
           alt="Profile"
         />
-        <div className="font-semibold text-2xl">{newuser}fsdfgsdg</div>
+        <div className="font-semibold text-2xl">{newuser}</div>
       </div>
 
       <div className="flex flex-col gap-3  ">
