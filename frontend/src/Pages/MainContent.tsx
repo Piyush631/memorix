@@ -88,7 +88,7 @@ export function MainContent() {
 <Card title={title} link={link} type={type} id={_id}   isDeletable={true} />
 )) : <LoadingPage/>}
 <div className="h-32 w-64 bg-amber-600">
-      <div>Please add contetn</div>
+      <div>Please add content</div>
       </div>
   
      </div>
