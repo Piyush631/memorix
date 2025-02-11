@@ -28,10 +28,6 @@ export function MainContent() {
   const[open,setOpen]=useState(true)
   const[user,setUser]=useState(" ")
   const[loading,setLoading]=useRecoilState(loadable)
-
- 
- setTimeout(() => {
-  setLoading(true)
   useEffect(()=>{
 
     const username = usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
@@ -41,6 +37,10 @@ export function MainContent() {
     setUser(username)
  
   },[])
+ 
+ setTimeout(() => {
+  setLoading(true)
+
  }, 4000);
 
   useEffect(() => {
@@ -87,9 +87,9 @@ export function MainContent() {
      {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
 <Card title={title} link={link} type={type} id={_id}   isDeletable={true} />
 )) : <LoadingPage/>}
-<div className="h-44 w-64  flex flex-col items-center justify-center bg-gray-300 rounded-xl gap-4">
+<div onClick={()=>{setIsOpen(!isOpen)}} className="h-44 w-64  cursor-pointer flex flex-col items-center justify-center bg-gray-300 rounded-xl gap-4">
       <div className="text-3xl"><FaPlus  className="text-3xl"/> </div>
-      <div onClick={()=>{setIsOpen(!isOpen)}} className="text-xl">Click to Add a Content</div>
+      <div  className="text-xl">Click to Add a Content</div>
       </div>
   
      </div>
