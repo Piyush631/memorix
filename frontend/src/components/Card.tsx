@@ -67,9 +67,9 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
         </div>
     )}
     {type === "Instagram" && (
-        <div className=" overflow-hidden" >
-            <InstagramEmbed url={link}  />
-        </div>
+       <div className="w-full md:w-1/2 h-[400px] md:h-[600px]">
+       <InstagramEmbed url={link} />
+     </div>
     )}
     {type === "Facebook" && (
         <div className=" overflow-hidden" >
