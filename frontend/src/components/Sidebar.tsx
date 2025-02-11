@@ -29,6 +29,7 @@ export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:a
     ? usersLoadable.contents[0].userId.username
     : " ";
     setNewuser(username)
+    console.log(username)
     setLoading(false)
 
   }, [selectedType, setRefreshKey]);
