@@ -50,7 +50,7 @@ async function submitdata() {
             username, // Ensure these variables are defined
             password
         });
-        console.log(response)
+     
       
             toast.success("Successfull Sign up") // Logs the data property of the response
          
