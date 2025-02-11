@@ -35,7 +35,7 @@ export function MainContent() {
 
     setUser(username)
   console.log(user)
-  },[])
+  },[usersLoadable])
  
  setTimeout(() => {
   setLoading(true)
