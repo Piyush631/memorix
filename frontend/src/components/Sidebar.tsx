@@ -20,7 +20,7 @@ export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:a
   const [, setRefreshKey] = useRecoilState(refreshState);
   const[,setLoading]=useRecoilState(loadable)
    const usersLoadable = useRecoilValueLoadable(fetchData);
-   const[newuser,setNewuser]=useState(" ")
+   const[newuser,setNewuser]=useState(" harsh")
   // Trigger refresh when selectedType changes
   useEffect(() => {
     setLoading(true)
