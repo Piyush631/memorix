@@ -87,8 +87,8 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
     {type === "Pinterest" && (
           <PinterestEmbed 
           url={link}
-          width={220}
-          height={260}
+          width={225}
+          height={280}
         />
     )}
 </div>
