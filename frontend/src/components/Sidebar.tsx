@@ -8,18 +8,18 @@ import { useNavigate } from "react-router-dom";
 import { RiGalleryView2 } from "react-icons/ri";
 import { IoIosLogOut } from "react-icons/io";
 import { toast } from "react-toastify";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValueLoadable } from "recoil";
 import { Insta } from "../icons/Insta";
 import { Facebook } from "../icons/Facebook";
 import { Pinterest } from "../icons/Pintrest";
-import { loadable, refreshState, selectContent } from "../Atoms/RecoilAtoms";
+import { fetchData, loadable, refreshState, selectContent } from "../Atoms/RecoilAtoms";
 
-export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:any }) {
+export function Sidebar({ open, setOpen }: { open: any; setOpen: any}) {
   const navigate = useNavigate();
   const [selectedType, setSelectedType] = useRecoilState(selectContent);
   const [, setRefreshKey] = useRecoilState(refreshState);
   const[,setLoading]=useRecoilState(loadable)
-
+  const usersLoadable = useRecoilValueLoadable(fetchData);
 
   // Trigger refresh when selectedType changes
   useEffect(() => {
@@ -64,7 +64,14 @@ export function Sidebar({ open, setOpen ,user}: { open: any; setOpen: any,user:a
           src="https://img.freepik.com/premium-vector/male-character-social-network-concept_24877-17897.jpg?w=740"
           alt="Profile"
         />
-        <div className="font-semibold text-2xl"> {user} </div>
+        <div className="font-semibold text-2xl"> 
+
+
+
+        { usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
+    ? usersLoadable.contents[0].userId.username
+    : " " }
+        </div>
       </div>
 
       <div className="flex flex-col gap-3  ">

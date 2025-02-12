@@ -7,6 +7,8 @@ import { useRecoilState } from "recoil";
 import {  refreshState} from "../Atoms/RecoilAtoms";
 
 import { toast } from "react-toastify";
+
+
 interface CardProps {
     title:string,
     link:string,
@@ -20,6 +22,7 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
    
     const [, setRefreshKey] = useRecoilState(refreshState);
 
+      
     async function handleDelete() {
         if( isDeletable)
         {
@@ -29,6 +32,7 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
                 }
             });
             toast.success("Card is deleted successfully");
+         
             setRefreshKey((prev) => prev + 1);
         }else{
             toast.error("you dont have permission to delete");
@@ -37,14 +41,18 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
     }
 
     return (
+     
+           
         <div>
 
   
-        <div className="border border-gray-200 bg-white rounded-md shadow-md min-h-48 max-h-auto  min-w-64 max-w-64 flex flex-col justify-between ">
+        <div className=" border border-gray-200 bg-white rounded-xl shadow-md min-h-48 max-h-auto    flex flex-col justify-between  ">
         
-            <div className="flex justify-between text-gray-500 p-2">
+            <div  className="flex  justify-between text-gray-500 p-2">
+             
                 <div className="text-black font-medium">{title}</div>
-                <div className="flex gap-3 items-center">
+                <div 
+                className="flex gap-3 items-center">
                     <a href={link} target="_blank">
                         <Shareicon size="sm" />
                     </a>
@@ -55,35 +63,38 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
             </div>
 
             {/* Content */}
-            <div className="p-2 h-full flex justify-center items-center mt-3">
+            <div  className="p-2 h-full flex justify-center items-center mt-3">
     {type === "Youtube" && (
-        <div className="overflow-hidden" >
-            <YouTubeEmbed url={link}  />
-        </div>
-    )}
-    {type === "Twitter" && (
-        <div className="overflow-hidden" >
-            <XEmbed url={link} />
-        </div>
-    )}
-    {type === "Instagram" && (
-       <div className="w-full md:w-1/2 h-[400px] md:h-[600px]">
-       <InstagramEmbed url={link} />
+       <div className="" style={{ display: 'flex', justifyContent: 'center' }}>
+       <YouTubeEmbed url={link}  className="rounded-xl" width={230} height={200} />
      </div>
     )}
+    {type === "Twitter" && (
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <XEmbed url={link} width={230} />
+      </div>
+    )}
+    {type === "Instagram" && (
+      <div className="rounded-xl"  style={{ display: 'flex', justifyContent: 'center' }}>
+      <InstagramEmbed url={link}  className="rounded-xl" width={320} />
+    </div>
+    )}
     {type === "Facebook" && (
-        <div className=" overflow-hidden" >
-            <FacebookEmbed url={link}  />
-        </div>
+       <div style={{ display: 'flex', justifyContent: 'center' }}>
+       <FacebookEmbed url={link} width={220} />
+     </div>
     )}
     {type === "Pinterest" && (
-        <div className=" overflow-hidden">
-            <PinterestEmbed url={link}  />
-        </div>
+          <PinterestEmbed 
+          url={link}
+          width={345}
+          height={467}
+        />
     )}
 </div>
 
         </div>
         </div>
+       
     );
 }

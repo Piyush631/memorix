@@ -5,7 +5,7 @@ import { InputField } from "./InputField";
 import axios from "axios";
 import { useRecoilState } from "recoil";
 import { refreshState } from "../Atoms/RecoilAtoms";
-
+import { motion } from "motion/react"
 
 interface Data {
   isOpen: boolean;
@@ -34,7 +34,7 @@ export function AddContent({ isOpen, onClose }: Data) {
 
     try {
       await axios.post(
-        `https://memorix.onrender.com/api/v1/content`,
+        `http://localhost:3000/api/v1/content`,
         { link, type, title },
         { headers: { Authorization: localStorage.getItem("authorization") } }
       );
@@ -51,7 +51,7 @@ export function AddContent({ isOpen, onClose }: Data) {
   //  Function to fetch the latest content and update Recoil state
   async function refreshContent() {
     try {
-      const response = await axios.get(`https://memorix.onrender.com/api/v1/content`, {
+      const response = await axios.get(`http://localhost:3000/api/v1/content`, {
         headers: { Authorization: localStorage.getItem("authorization") },
       });
 
@@ -66,14 +66,16 @@ export function AddContent({ isOpen, onClose }: Data) {
   }
 
   return (
-    <div>
+    <motion.div  >
+        
       {isOpen && (
-        <div>
+        <div >
         
           <div className="h-full w-full bg-gray-400 top-0 left-0 fixed flex items-center justify-center opacity-60"></div>
 
           {/* Modal container */}
-          <div className="h-screen w-full top-0 left-0 z-10 fixed flex items-center justify-center">
+          <motion.div initial={{ opacity: 0, scale: 0 }}
+    animate={{ opacity: 1, scale: 1 }}  transition={{duration:0.8}} className="h-screen w-full top-0 left-0 z-10 fixed flex items-center justify-center">
             <div className="bg-white p-4 rounded-md">
         
               <div className="flex justify-end " onClick={onClose}>
@@ -96,6 +98,7 @@ export function AddContent({ isOpen, onClose }: Data) {
                   <option value="Youtube">YouTube</option>
             
                   <option value="Instagram">Instagram</option>
+                  <option value="Twitter">Twitter</option>
                   <option value="Pinterest">Pinterest</option>
                   <option value="Facebook">Facebook</option>
                 </select>
@@ -114,9 +117,9 @@ export function AddContent({ isOpen, onClose }: Data) {
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

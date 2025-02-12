@@ -5,7 +5,7 @@ import { useRecoilState } from "recoil";
 import { sharedurl } from "../Atoms/RecoilAtoms";
 import { toast } from "react-toastify";
 import { StopSharing } from "./StopSharing";
-
+import { motion } from "motion/react"
 interface Data {
     isOpenShare: boolean;
     onClose: () => void;
@@ -59,9 +59,10 @@ function extractPath(url: any) {
         {isOpenShare && (<div>
             <div className="h-screen w-full bg-gray-400 top-0 left-0 fixed flex items-center justify-center opacity-60"></div>
 
-<div className="h-screen w-full top-0 left-0 z-10 fixed flex flex-col items-center justify-center">
+< motion.div  initial={{ opacity: 0, scale: 0 }}
+    animate={{ opacity: 1, scale: 1 }}  transition={{duration:0.8}} className="h-screen w-full top-0 left-0 z-10 fixed flex flex-col items-center justify-center">
   
-  <div className="flex flex-col gap-2 justify-center items-center  rounded-lg bg-white  h-28 w-72 md:w-96  ">
+  < div className="flex flex-col gap-2 justify-center items-center  rounded-lg bg-white  h-28 w-72 md:w-96  ">
   <div  className="ml-72 cursor-pointer" onClick={onClose}>
                   <Closeicon />
                 </div>
@@ -75,7 +76,7 @@ function extractPath(url: any) {
  
   </div>
  
-</div>
+</motion.div>
             
             
             

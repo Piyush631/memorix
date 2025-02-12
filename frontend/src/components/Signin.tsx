@@ -7,7 +7,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useState } from "react";
-
+import { motion } from "motion/react"
 const FormSchema=z.object({
     username:z.string().min(5,"Username must be at least 4 characters long").max(20),
     password:z.string().min(6,"Password must be at least 6 characters long")
@@ -35,7 +35,7 @@ async  function fetchUser(){
    
     try {
         setLoading(false)
-        const response: any = await axios.post(`https://memorix.onrender.com/api/v1/signin`,{
+        const response: any = await axios.post(`http://localhost:3000/api/v1/signin`,{
         username,
         password
     })
@@ -73,9 +73,16 @@ function getPassword(e:any)
     setPassword(e.target.value)
 }
 return (
-    <div className="fixed h-screen w-full flex  justify-center items-center gap-12 bg-slate-100 ">
+    <motion.div  initial={{ opacity: 0, scale: 0 }}
+    animate={{ opacity: 1, scale: 1 }}  transition={{duration:1}}  className="fixed h-screen w-full flex  justify-center items-center gap-12 bg-slate-100 ">
  <div className=" hidden h-screen  lg:flex flex-col  justify-center  ">
-    <div className="text-7xl font-bold  text-[#5046E4] ">Memorix</div>
+    <motion.div   animate={{ scale: [1, 1.05, 1] }} // Scale up to 1.1 and back to 1
+  transition={{
+    duration: 2,          // Duration of the entire animation cycle
+    ease: "easeInOut",    // Smooth easing for a more natural feel
+    repeat: Infinity,     // Repeat infinitely
+    repeatType: "mirror", // Plays the animation back and forth
+  }} className="text-7xl font-bold  text-[#5046E4] ">Memorix</motion.div>
     <div className="text-xl font-normal leading-6  mt-7 w-[600px]">
     A powerful tool designed to help you store, organize, and revisit the resources that matter to you. Stay productive and focused.
     </div>
@@ -99,7 +106,7 @@ return (
         <div className="mt-4 flex justify-center text-gray-700">Did not have an account?  <a href="/signup"> <span className="text-[#5046E4]">&nbsp; Sign up</span></a></div>
         </div>
    
-    </div>
+    </motion.div>
    
   
 )
