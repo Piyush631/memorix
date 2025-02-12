@@ -76,12 +76,13 @@ return (
     <motion.div  initial={{ opacity: 0, scale: 0 }}
     animate={{ opacity: 1, scale: 1 }}  transition={{duration:1}}  className="fixed h-screen w-full flex  justify-center items-center gap-12 bg-slate-100 ">
  <div className=" hidden h-screen  lg:flex flex-col  justify-center  ">
-    <motion.div   animate={{ scale: [1, 1.05, 1] }} // Scale up to 1.1 and back to 1
+    <motion.div  
+    initial={{y:25, opacity:0}}
+    animate={{y:0, opacity:1 }} 
   transition={{
-    duration: 2,          // Duration of the entire animation cycle
-    ease: "easeInOut",    // Smooth easing for a more natural feel
-    repeat: Infinity,     // Repeat infinitely
-    repeatType: "mirror", // Plays the animation back and forth
+    duration: 1,         
+    ease: "easeInOut",   
+ 
   }} className="text-7xl font-bold  text-[#5046E4] ">Memorix</motion.div>
     <div className="text-xl font-normal leading-6  mt-7 w-[600px]">
     A powerful tool designed to help you store, organize, and revisit the resources that matter to you. Stay productive and focused.
