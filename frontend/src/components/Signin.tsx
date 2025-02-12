@@ -80,18 +80,20 @@ return (
     initial={{y:25, opacity:0}}
     animate={{y:0, opacity:1 }} 
   transition={{
-    duration: 1,         
-    ease: "easeInOut",   
+    duration: 2,         
+    ease: "easeInOut"
  
   }} className="text-7xl font-bold  text-[#5046E4] ">Memorix</motion.div>
     <motion.div 
     style={{overflow:"hidden", whiteSpace:"nowrap"}}
     initial={{width:0}}
     animate={{width:"100%"}}
-    transition={{ease:easeInOut, duration:2}}
+    transition={{ease:easeInOut, duration:3}}
     
     className="text-xl font-normal leading-6  mt-7 w-[600px]">
-    A powerful tool designed to help you store, organize, a
+    A powerful tool designed to help you store, organize,<br/>
+     and revisit the resources that matter to you. 
+     <br/> Stay productive and focused.
     </motion.div>
  </div>
         <div className="bg-white pr-12 pl-12 pb-10 pt-8 lg:px-10 lg:py-8  rounded-lg border-[1px] shadow border-gray-200 ">
