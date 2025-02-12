@@ -90,12 +90,12 @@ return (
     animate={{width:"100%"}}
     transition={{ease:easeInOut, duration:2}}
     
-    className="text-lg text-gray-700 font-normal leading-6  mt-7 w-[600px]">
+    className="text-lg text-gray-700 font-normal leading-4  mt-4 w-[600px]">
     A powerful tool designed to help you store, organize,<br/>
     <motion.p  style={{overflow:"hidden", whiteSpace:"nowrap"}}
     initial={{width:0}}
     animate={{width:"100%"}}
-    transition={{ease:easeInOut, duration:2,delay:2}}
+    transition={{ease:easeInOut, duration:2,delay:2,repeat:Infinity}}
     
     
     >and revisit the resources that matter to you. </motion.p> 
@@ -103,7 +103,7 @@ return (
       style={{overflow:"hidden", whiteSpace:"nowrap"}}
       initial={{width:0}}
       animate={{width:"100%"}}
-      transition={{ease:easeInOut, duration:2,delay:4}}
+      transition={{ease:easeInOut, duration:2,delay:3}}
      > Stay productive and focused.</motion.p>
     </motion.div>
  </div>
