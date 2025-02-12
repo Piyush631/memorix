@@ -7,7 +7,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useState } from "react";
-import { motion } from "motion/react"
+import { easeInOut, motion } from "motion/react"
 const FormSchema=z.object({
     username:z.string().min(5,"Username must be at least 4 characters long").max(20),
     password:z.string().min(6,"Password must be at least 6 characters long")
@@ -84,9 +84,15 @@ return (
     ease: "easeInOut",   
  
   }} className="text-7xl font-bold  text-[#5046E4] ">Memorix</motion.div>
-    <div className="text-xl font-normal leading-6  mt-7 w-[600px]">
+    <motion.div 
+    style={{overflow:"hidden", whiteSpace:"nowrap"}}
+    initial={{width:0}}
+    animate={{width:"100%"}}
+    transition={{ease:easeInOut, duration:2}}
+    
+    className="text-xl font-normal leading-6  mt-7 w-[600px]">
     A powerful tool designed to help you store, organize, and revisit the resources that matter to you. Stay productive and focused.
-    </div>
+    </motion.div>
  </div>
         <div className="bg-white pr-12 pl-12 pb-10 pt-8 lg:px-10 lg:py-8  rounded-lg border-[1px] shadow border-gray-200 ">
       <div className=" lg:hidden block text-center text-5xl font-semibold text-[#5046E4] font-mono">  Memorix </div>   
