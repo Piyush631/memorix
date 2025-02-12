@@ -5,7 +5,7 @@ import { Card } from "../components/Card"
 
 import { Sidebar } from "../components/Sidebar"
 import { useRecoilState, useRecoilValueLoadable } from "recoil"
-import { fetchData, loadable } from "../Atoms/RecoilAtoms"
+import { fetchData, loadable, query } from "../Atoms/RecoilAtoms"
 import { HeaderData } from "../components/Header"
 import { Popup } from "../components/Popup"
 import { LoadingPage } from "./LoadingPage"
@@ -17,7 +17,8 @@ interface dataTypes {
   type:string
   username?:string
   _id?:any
-  isDeletable?: boolean;
+  isDeletable?: boolean
+  createdAt?:any
 }
 
 
@@ -28,6 +29,8 @@ export function MainContent() {
   const[open,setOpen]=useState(false)
  
   const[loading,setLoading]=useRecoilState(loadable)
+const[debounceSearchQuery,]=useRecoilState(query)
+
  /* useEffect(()=>{
 
   const username = usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
@@ -37,6 +40,7 @@ export function MainContent() {
     setUser(username)
  
   },[])*/
+
   const [greet,setGreet]=useState(" ")
   useEffect(()=>{
     const dynamicGreet= ()=>{
@@ -60,6 +64,7 @@ export function MainContent() {
     return ()=>{
       clearInterval(interval)
     }
+
   },[])
  
  setTimeout(() => {
@@ -91,6 +96,7 @@ export function MainContent() {
               setOpen(!open)
             }}  />
          </div>
+
          <div className="flex flex-col   p-1 m-1  h-auto w-full">
       <div className={`${!open ? "-ml-28":"-ml-32  lg:ml-12 "} `}>
           <AddContent isOpen={isOpen} onClose={()=>{
@@ -105,28 +111,40 @@ export function MainContent() {
          <div className="p-1">
   <HeaderData setIsOpen={setIsOpen} setIsOpenShare={setIsOpenShare}/>
     </div>
-       
+
     
  <div className={` left-6  ml-2 rounded-xl  mt-2 px-3 bg-[#F4F4FC] w-full   pl-24`}>
     
-     <div className=" pt-1 text-3xl font-semibold  inline-block  text-transparent  bg-clip-text bg-gradient-to-r from-blue-700 via-green-600 to-indigo-500" >
+     <div className=" pt-1 text-2xl  md:text-3xl font-semibold  inline-block  text-transparent  bg-clip-text bg-gradient-to-r from-blue-700 via-green-600 to-indigo-500" >
       {greet} <span>  { usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
     ? usersLoadable.contents[0].userId.username
     : " " }</span>
      </div>
      <div className=" flex   flex-wrap gap-7 pt-5">
 
-    
-     {loading ? usersLoadable.state==="hasValue" && usersLoadable.contents.map(({ title, link, type,_id}: dataTypes) => (
-      <motion.div whileHover={{
-        scale: 1.06,
-        transition: { duration: 1 },
-      }}
+     {loading && usersLoadable.state === "hasValue" ? (
+  usersLoadable.contents
+    .filter(({ title }: dataTypes) => {
+ 
+      if (debounceSearchQuery===" ") return true;
+      return title?.toLowerCase().includes(debounceSearchQuery);
+    })
+    .map(({ title, link, type, _id, createdAt }: dataTypes) => (
+      <motion.div
+        key={_id} // Ensure each motion.div has a unique key
+        whileHover={{
+          scale: 1.06,
+          transition: { duration: 1 },
+        }}
       >
-        <Card  title={title} link={link} type={type} id={_id}   isDeletable={true} />
+        <Card title={title} link={link} type={type} id={_id} createdAt={createdAt} isDeletable={true} />
       </motion.div>
+    ))
+) : (
+  <LoadingPage />
+)}
 
-)) : <LoadingPage/>}
+
 <div onClick={()=>{setIsOpen(!isOpen)}} className="h-44 w-64  cursor-pointer flex flex-col items-center justify-center bg-gray-300 rounded-xl gap-4">
       <div className="text-3xl"><FaPlus  className="text-3xl"/> </div>
       <div  className="text-xl">Click to Add a Content</div>

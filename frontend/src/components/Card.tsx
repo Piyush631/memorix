@@ -7,6 +7,7 @@ import { useRecoilState } from "recoil";
 import {  refreshState} from "../Atoms/RecoilAtoms";
 
 import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
 
 
 interface CardProps {
@@ -16,13 +17,18 @@ interface CardProps {
     username?:string
     id?:string
     isDeletable?: boolean;
+    createdAt?:any
 }
 
-export function Card({ title, link, type, id,  isDeletable }: CardProps) {
+export function Card({ title, link, type, id, createdAt, isDeletable }: CardProps) {
    
     const [, setRefreshKey] = useRecoilState(refreshState);
 
-      
+    const [create,setCreate]=useState(" ")
+ useEffect(()=>{
+    const timesplit=createdAt.split("T")[0];
+    setCreate(timesplit);
+ },[])
     async function handleDelete() {
         if( isDeletable)
         {
@@ -51,6 +57,7 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
             <div  className="flex  justify-between text-gray-500 p-2">
              
                 <div className="text-black font-medium">{title}</div>
+
                 <div 
                 className="flex gap-3 items-center">
                     <a href={link} target="_blank">
@@ -61,7 +68,7 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
                     </div>
                 </div>
             </div>
-
+        <div className="px-2  -mt-3 text-gray-400">Creation Date:- {create} </div>
             {/* Content */}
             <div  className="p-2 h-full flex justify-center items-center mt-3">
     {type === "Youtube" && (
@@ -87,8 +94,8 @@ export function Card({ title, link, type, id,  isDeletable }: CardProps) {
     {type === "Pinterest" && (
           <PinterestEmbed 
           url={link}
-          width={225}
-          height={280}
+          width={345}
+          height={467}
         />
     )}
 </div>

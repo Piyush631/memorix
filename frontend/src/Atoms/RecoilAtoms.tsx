@@ -28,7 +28,10 @@ export const selectContent=atom({
         key:"sharedurl",
         default:" "
     })
- 
+    export const query=atom({
+        key:"query",
+        default:" "
+    })
 export const fetchData=selector({
     key:"fetchdatauser",
     get:async({get})=>{
