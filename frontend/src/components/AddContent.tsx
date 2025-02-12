@@ -34,7 +34,7 @@ export function AddContent({ isOpen, onClose }: Data) {
 
     try {
       await axios.post(
-        `http://localhost:3000/api/v1/content`,
+        `https://memorix.onrender.com/api/v1/content`,
         { link, type, title },
         { headers: { Authorization: localStorage.getItem("authorization") } }
       );
