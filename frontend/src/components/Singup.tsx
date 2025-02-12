@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import {  toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+import { easeInOut, motion } from "motion/react"
 
 const FormSchema=z.object({
     username:z.string().min(5,"Username must be at least 4 characters long").max(20),
@@ -76,12 +76,39 @@ async function submitdata() {
 
 
     return (
-        <div className="fixed h-screen w-full flex  justify-center items-center gap-12 bg-slate-100 ">
+        <motion.div  initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}  transition={{duration:1}}  className="fixed h-screen w-full flex  justify-center items-center gap-12 bg-slate-100 ">
      <div className=" hidden h-screen  lg:flex flex-col  justify-center  ">
-        <div className="text-7xl font-bold  text-[#5046E4] ">Memorix</div>
-        <div className="text-xl font-normal leading-6  mt-7 w-[600px]">
-        A powerful tool designed to help you store, organize, and revisit the resources that matter to you. Stay productive and focused.
-        </div>
+        <motion.div  
+        initial={{y:25, opacity:0}}
+        animate={{y:0, opacity:1 }} 
+      transition={{
+        duration: 3,         
+        ease: "easeInOut"
+     
+      }} className="text-7xl font-bold  text-[#5046E4] ">Memorix</motion.div>
+        <motion.div 
+        style={{overflow:"hidden", whiteSpace:"nowrap"}}
+        initial={{width:0}}
+        animate={{width:"100%"}}
+        transition={{ease:easeInOut, duration:2}}
+        
+        className="text-lg text-gray-700 font-normal leading-4  mt-4 w-[600px]">
+        A powerful tool designed to help you store, organize,<br/>
+        <motion.p  style={{overflow:"hidden", whiteSpace:"nowrap"}}
+        initial={{width:0}}
+        animate={{width:"100%"}}
+        transition={{ease:easeInOut, duration:2,delay:2,repeat:Infinity}}
+        
+        
+        >and revisit the resources that matter to you. </motion.p> 
+         <motion.p
+          style={{overflow:"hidden", whiteSpace:"nowrap"}}
+          initial={{width:0}}
+          animate={{width:"100%"}}
+          transition={{ease:easeInOut, duration:2,delay:3}}
+         > Stay productive and focused.</motion.p>
+        </motion.div>
      </div>
             <div className="bg-white pr-10 pl-10 pb-8 pt-6  rounded-lg border-[1px] shadow border-gray-200 ">
           <div className=" lg:hidden block text-center text-5xl font-semibold text-[#5046E4] font-mono">  Memorix </div>   
@@ -103,7 +130,7 @@ async function submitdata() {
             <div className="mt-4 flex justify-center">Already have a account?  <a href="/signin"> <span className="text-[#5046E4]"> Log in</span></a> </div>
             </div>
        
-        </div>
+        </motion.div>
        
       
     )
