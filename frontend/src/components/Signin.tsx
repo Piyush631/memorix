@@ -91,7 +91,7 @@ return (
     transition={{ease:easeInOut, duration:2}}
     
     className="text-xl font-normal leading-6  mt-7 w-[600px]">
-    A powerful tool designed to help you store, organize, and revisit the resources that matter to you. Stay productive and focused.
+    A powerful tool designed to help you store, organize, a
     </motion.div>
  </div>
         <div className="bg-white pr-12 pl-12 pb-10 pt-8 lg:px-10 lg:py-8  rounded-lg border-[1px] shadow border-gray-200 ">
