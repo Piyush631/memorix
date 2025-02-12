@@ -35,7 +35,7 @@ async  function fetchUser(){
    
     try {
         setLoading(false)
-        const response: any = await axios.post(`http://localhost:3000/api/v1/signin`,{
+        const response: any = await axios.post(`https://memorix.onrender.com/api/v1/signin`,{
         username,
         password
     })

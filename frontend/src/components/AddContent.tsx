@@ -51,7 +51,7 @@ export function AddContent({ isOpen, onClose }: Data) {
   //  Function to fetch the latest content and update Recoil state
   async function refreshContent() {
     try {
-      const response = await axios.get(`http://localhost:3000/api/v1/content`, {
+      const response = await axios.get(`https://memorix.onrender.com/api/v1/content`, {
         headers: { Authorization: localStorage.getItem("authorization") },
       });
 
