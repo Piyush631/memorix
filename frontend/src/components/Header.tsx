@@ -38,7 +38,7 @@ export function HeaderData({setIsOpen,setIsOpenShare}:head){
        
              <div className=" flex   gap-2 md:gap-3">
          
-<div className="hidden lg:flex">
+<div className=" ">
 <input type="text" onChange={(e)=>{
   setSearchQuery(e.target.value)
 }} className="  p-2 h-8 w-56 lg:w-64 bg-white rounded-md" placeholder="Search..."/>
