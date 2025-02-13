@@ -27,7 +27,7 @@ export function HeaderData({setIsOpen,setIsOpenShare}:head){
   },[searchquery])
 
     return (
-        <div className="flex  justify-center md:justify-between px-16  " > 
+        <div className="md:flex   flex-col justify-center md:justify-between px-16  " > 
           <div className="hidden md:flex ml-2  items-center gap-2">
                     <BrainLogo />
                     <div className="hidden md:block text-2xl font-semibold">
@@ -37,7 +37,7 @@ export function HeaderData({setIsOpen,setIsOpenShare}:head){
        
              <div className=" flex   gap-2 md:gap-3">
          
-<div className="hidden lg:flex">
+<div className="flex">
 <input type="text" onChange={(e)=>{
   setSearchQuery(e.target.value)
 }} className="  p-2 h-8 w-64 bg-white rounded-md" placeholder="Search..."/>
@@ -49,13 +49,16 @@ export function HeaderData({setIsOpen,setIsOpenShare}:head){
 
 
 
-</div>
+</div>  
+<div className="flex gap-2">
+
+
                 <Button 
                    onClick={()=>{
                     setIsOpenShare(true)  }} text="Share Brain "  variant="secondary" startIcon={<Shareicon size="md" />}/>
                 <Button   onClick={()=>{setIsOpen(true)}}  text="Add Content"  variant="primary" startIcon={  <PlusIcon size="md"/>}/>
              
-            
+                </div>
                   </div>
         </div>
     )
