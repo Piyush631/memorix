@@ -28,7 +28,7 @@ export function HeaderData({setIsOpen,setIsOpenShare}:head){
 
     return (
         <div className="flex  justify-center md:justify-between px-16  " > 
-          <div className="flex ml-2  items-center gap-2">
+          <div className="hidden md:flex ml-2  items-center gap-2">
                     <BrainLogo />
                     <div className="hidden md:block text-2xl font-semibold">
                       Memorix
@@ -50,7 +50,7 @@ export function HeaderData({setIsOpen,setIsOpenShare}:head){
 
 
 </div>
-                  <Button 
+                <Button 
                    onClick={()=>{
                     setIsOpenShare(true)  }} text="Share Brain "  variant="secondary" startIcon={<Shareicon size="md" />}/>
                 <Button   onClick={()=>{setIsOpen(true)}}  text="Add Content"  variant="primary" startIcon={  <PlusIcon size="md"/>}/>
