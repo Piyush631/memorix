@@ -115,12 +115,12 @@ const[debounceSearchQuery,]=useRecoilState(query)
     
  <div className={` left-4 md:left-6  ml-2 rounded-xl  mt-2 px-3 bg-[#F4F4FC] w-full   pl-9 md:pl-24`}>
     
-     <div className=" pt-1 text-2xl  md:text-3xl font-semibold  inline-block  text-transparent  bg-clip-text bg-gradient-to-r from-blue-700 via-green-600 to-indigo-500" >
+     <div className="pl-3 pt-1 text-2xl  md:text-3xl font-semibold  inline-block  text-transparent  bg-clip-text bg-gradient-to-r from-blue-700 via-green-600 to-indigo-500" >
       {greet} <span>  { usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
     ? usersLoadable.contents[0].userId.username
     : " " }</span>
      </div>
-     <div className=" flex  items-center justify-center  flex-wrap gap-7 pt-5">
+     <div className=" flex  items-center justify-center md:justify-normal md:items-start flex-wrap gap-7 pt-5">
 
      {loading && usersLoadable.state === "hasValue" ? (
   usersLoadable.contents
