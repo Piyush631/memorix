@@ -118,7 +118,7 @@ const[debounceSearchQuery,]=useRecoilState(query)
      <motion.div   style={{overflow:"hidden", whiteSpace:"nowrap"}}
         initial={{width:0}}
         animate={{width:"100%"}}
-        transition={{ease:easeInOut, duration:2,delay:1}}
+        transition={{ease:easeInOut, duration:3,delay:1}}
      className="pl-3 pt-1 text-2xl  md:text-3xl font-semibold  inline-block  text-transparent  bg-clip-text bg-gradient-to-r from-blue-700 via-green-600 to-indigo-500" >
       {greet} <motion.span
       

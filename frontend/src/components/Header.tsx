@@ -36,8 +36,8 @@ export function HeaderData({setIsOpen,setIsOpenShare}:head){
                     </div>
           </div>
        
-             <div className=" flex   gap-2 md:gap-3">
-         
+           
+             <div className=" flex flex-col  justify-between items-center sm:flex-row  gap-2 md:gap-3">
 <div className=" ">
 <input type="text" onChange={(e)=>{
   setSearchQuery(e.target.value)
