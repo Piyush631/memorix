@@ -83,7 +83,7 @@ export function Card({ title, link, type, id, createdAt, isDeletable }: CardProp
     )}
     {type === "Instagram" && (
       <div className="rounded-xl"  style={{ display: 'flex', justifyContent: 'center' }}>
-      <InstagramEmbed url={link}  className="rounded-xl" width={320} />
+      <InstagramEmbed url={link}  className="rounded-xl" width={317} />
     </div>
     )}
     {type === "Facebook" && (
