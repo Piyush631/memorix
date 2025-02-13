@@ -119,13 +119,13 @@ const[debounceSearchQuery,]=useRecoilState(query)
         initial={{width:0}}
         animate={{width:"100%"}}
         transition={{ease:easeInOut, duration:3,delay:1}}
-     className="pl-3 pt-1 text-2xl  md:text-3xl font-semibold  inline-block  text-transparent  bg-clip-text bg-gradient-to-r from-blue-700 via-green-600 to-indigo-500" >
-      {greet} <motion.span
+     className="pl-3 pt-1 text-2xl  md:text-3xl font-semibold  inline-block  text-transparent  bg-clip-text bg-gradient-to-r from-blue-700 via-green-500 to-indigo-400" >
+      {greet} <span
       
       
       >  { usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
     ? usersLoadable.contents[0].userId.username
-    : " " }</motion.span>
+    : " " }</span>
      </motion.div>
      <div className=" flex  items-center justify-center md:justify-normal md:items-start flex-wrap gap-7 pt-5">
 
