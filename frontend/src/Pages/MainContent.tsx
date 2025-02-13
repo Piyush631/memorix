@@ -10,7 +10,7 @@ import { HeaderData } from "../components/Header"
 import { Popup } from "../components/Popup"
 import { LoadingPage } from "./LoadingPage"
 import { FaPlus } from "react-icons/fa6";
-import { motion } from "motion/react"
+import { easeInOut, motion } from "motion/react"
 interface dataTypes {
   title?:any,
   link:string,
@@ -116,9 +116,15 @@ const[debounceSearchQuery,]=useRecoilState(query)
  <div className={` left-4 md:left-6  ml-2 rounded-xl  mt-2 px-3 bg-[#F4F4FC] w-full   pl-9 md:pl-24`}>
     
      <div className="pl-3 pt-1 text-2xl  md:text-3xl font-semibold  inline-block  text-transparent  bg-clip-text bg-gradient-to-r from-blue-700 via-green-600 to-indigo-500" >
-      {greet} <span>  { usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
+      {greet} <motion.span
+        style={{overflow:"hidden", whiteSpace:"nowrap"}}
+        initial={{width:0}}
+        animate={{width:"100%"}}
+        transition={{ease:easeInOut, duration:2,delay:1}}
+      
+      >  { usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
     ? usersLoadable.contents[0].userId.username
-    : " " }</span>
+    : " " }</motion.span>
      </div>
      <div className=" flex  items-center justify-center md:justify-normal md:items-start flex-wrap gap-7 pt-5">
 
@@ -131,7 +137,7 @@ const[debounceSearchQuery,]=useRecoilState(query)
     })
     .map(({ title, link, type, _id, createdAt }: dataTypes) => (
       <motion.div
-        key={_id} // Ensure each motion.div has a unique key
+        key={_id} 
         whileHover={{
           scale: 1.06,
           transition: { duration: 1 },
