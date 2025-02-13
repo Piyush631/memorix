@@ -113,7 +113,7 @@ const[debounceSearchQuery,]=useRecoilState(query)
     </div>
 
     
- <div className={` left-3 md:left-6  ml-2 rounded-xl  mt-2 px-3 bg-[#F4F4FC] w-full   pl-8 md:pl-24`}>
+ <div className={` left-4 md:left-6  ml-2 rounded-xl  mt-2 px-3 bg-[#F4F4FC] w-full   pl-9 md:pl-24`}>
     
      <div className=" pt-1 text-2xl  md:text-3xl font-semibold  inline-block  text-transparent  bg-clip-text bg-gradient-to-r from-blue-700 via-green-600 to-indigo-500" >
       {greet} <span>  { usersLoadable.state === "hasValue" && usersLoadable.contents.length > 0
