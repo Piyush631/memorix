@@ -120,7 +120,7 @@ const[debounceSearchQuery,]=useRecoilState(query)
     ? usersLoadable.contents[0].userId.username
     : " " }</span>
      </div>
-     <div className=" flex   flex-wrap gap-7 pt-5">
+     <div className=" flex  items-center justify-center  flex-wrap gap-7 pt-5">
 
      {loading && usersLoadable.state === "hasValue" ? (
   usersLoadable.contents
