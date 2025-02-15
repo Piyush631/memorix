@@ -95,7 +95,7 @@ export function Sidebar({ open, setOpen }: { open: any; setOpen: any}) {
         </button>
       </div>
 
-      <div className="flex cursor-pointer ml-3 mt-24 gap-4 hover:bg-gray-300 hover:rounded-md">
+      <div className="flex cursor-pointer ml-3 mt-24 gap-4 hover:bg-gray-300 hover:pl-2 hover:rounded-md">
         <button className="text-2xl" onClick={logout}>
           <IoIosLogOut />
         </button>
