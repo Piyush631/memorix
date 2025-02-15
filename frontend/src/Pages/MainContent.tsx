@@ -63,6 +63,7 @@ const[debounceSearchQuery,]=useRecoilState(query)
     }
     dynamicGreet();
     const interval=setInterval(dynamicGreet,60000)
+    console.log(localStorage.getItem("authorization"))
     return ()=>{
       clearInterval(interval)
     }
