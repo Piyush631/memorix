@@ -59,17 +59,17 @@ export function Card({ title, link, type, id, createdAt, isDeletable }: CardProp
                 <div className="text-black font-medium">{title}</div>
 
                 <div 
-                className="flex gap-3 items-center">
+                className="flex gap-3 items-center hover:bg-gray-500">
                     <a href={link} target="_blank">
                         <Shareicon size="sm" />
                     </a>
-                    <div className="cursor-pointer" onClick={handleDelete}>
+                    <div className="cursor-pointer hover:bg-gray-500" onClick={handleDelete}>
                         <RiDeleteBin5Line />
                     </div>
                 </div>
             </div>
-        <div className="px-2  -mt-3 text-gray-400">Creation Date:- {create} </div>
-            {/* Content */}
+        <div className="px-2  text-sm -mt-3 text-gray-300"> Date:- {create} </div>
+      
             <div  className="p-2 h-full flex justify-center items-center mt-3">
     {type === "Youtube" && (
        <div className="" style={{ display: 'flex', justifyContent: 'center' }}>
