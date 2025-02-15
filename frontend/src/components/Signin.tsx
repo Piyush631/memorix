@@ -75,7 +75,7 @@ function getPassword(e:any)
 return (
     <div  className="fixed h-screen w-full flex  justify-center items-center gap-12 bg-slate-100 ">
         <motion.div  initial={{ opacity: 0, scale: 0 }}
-    animate={{ opacity: 1, scale: 1 }}  transition={{duration:1}} >
+    animate={{ opacity: 1, scale: 1 }}  transition={{duration:1}}  className="flex ">
 
  <div className=" hidden h-screen  lg:flex flex-col  justify-center  ">
     <motion.div  
@@ -114,9 +114,9 @@ return (
       <div className="text-center lg:mt-0 mt-3 text-3xl font-semibold">Welcome Back</div>
       <div className="text-center  mt-3 text-sm lg:mt-1 text-gray-400">Login to continue managing your resources</div>
         <form className="lg:mt-6 mt-8  text-black" onSubmit={handleSubmit(onSubmit)}>
-            <input className="py-2 w-80 border-2 text-black font-medium text-md border-gray-300 shadow-md rounded-md" type="text" {...register('username')} onChange={getUser} placeholder="Username"  />
+            <input className="py-2 px-2 w-80 border-2 text-black font-medium text-md border-gray-300 shadow-md rounded-md" type="text" {...register('username')} onChange={getUser} placeholder="Username"  />
             {errors.username && <p className="text-red-600">{errors.username.message} </p>} <br/>
-            <input className="py-2  text-black font-medium text-md w-80 border-2 mt-3 border-gray-300 shadow-md rounded-md" type="password" {...register('password')} onChange={getPassword} placeholder="Password"/>
+            <input className="py-2  px-2 text-black font-medium text-md w-80 border-2 mt-3 border-gray-300 shadow-md rounded-md" type="password" {...register('password')} onChange={getPassword} placeholder="Password"/>
             {errors.password && <p className="text-red-600">{errors.password.message} </p>}<br/>
 
   
