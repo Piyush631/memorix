@@ -5,7 +5,7 @@ import { Youtube } from "../icons/Youtube";
 import { NavIcon } from "./NavIcon";
 import { IoMdMenu } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import { RiGalleryView2 } from "react-icons/ri";
+
 import { IoIosLogOut } from "react-icons/io";
 import { toast } from "react-toastify";
 import { useRecoilState, useRecoilValueLoadable } from "recoil";
