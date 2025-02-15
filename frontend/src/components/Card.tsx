@@ -59,12 +59,12 @@ export function Card({ title, link, type, id, createdAt, isDeletable }: CardProp
                 <div className="text-black font-medium">{title}</div>
 
                 <div 
-                className="flex gap-3 items-center ">
+                className="flex gap-3 items-center hover:text-gray-600 ">
                     <a href={link} target="_blank">
                         <Shareicon  size="sm" />
                     </a>
-                    <div className="cursor-pointer text-red-600" onClick={handleDelete}>
-                       <span className="hover:bg-gray-700"> <RiDeleteBin5Line /> </span> 
+                    <div className="cursor-pointer hover:text-gray-600" onClick={handleDelete}>
+                       <span className=""> <RiDeleteBin5Line /> </span> 
                     </div>
                 </div>
             </div>
