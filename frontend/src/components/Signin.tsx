@@ -109,7 +109,7 @@ return (
      > Stay productive and focused.</motion.p>
     </motion.div>
  </div>
-        <div className="bg-white h-96 pr-12 pl-12 pb-10 pt-8 lg:px-10 lg:py-8  rounded-lg border-[1px] shadow border-gray-200 ">
+        <div className="bg-white h-96 pr-12 pl-12 pb-5 md:pb-10 pt-8 lg:px-10 lg:py-8  rounded-lg border-[1px] shadow border-gray-200 ">
       <div className=" lg:hidden block text-center text-5xl font-semibold text-[#5046E4] font-mono">  Memorix </div>   
       <div className="text-center lg:mt-0 mt-3 text-3xl font-semibold">Welcome Back</div>
       <div className="text-center  mt-3 text-sm lg:mt-1 text-gray-400">Login to continue managing your resources</div>

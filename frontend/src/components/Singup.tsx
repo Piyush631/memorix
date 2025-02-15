@@ -76,14 +76,13 @@ async function submitdata() {
 
 
     return (
-        <motion.div  initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}  transition={{duration:1}}  className="fixed h-screen w-full flex  justify-center items-center gap-12 bg-slate-100 ">
+        <motion.div   className="fixed h-screen w-full flex  justify-center items-center gap-12 bg-slate-100 ">
      <div className=" hidden h-screen  lg:flex flex-col  justify-center  ">
         <motion.div  
         initial={{y:25, opacity:0}}
         animate={{y:0, opacity:1 }} 
       transition={{
-        duration: 3,         
+        duration: 2,         
         ease: "easeInOut"
      
       }} className="text-7xl font-bold  text-[#5046E4] ">Memorix</motion.div>
@@ -91,14 +90,14 @@ async function submitdata() {
         style={{overflow:"hidden", whiteSpace:"nowrap"}}
         initial={{width:0}}
         animate={{width:"100%"}}
-        transition={{ease:easeInOut, duration:2}}
+        transition={{ease:easeInOut, duration:1}}
         
         className="text-lg text-gray-700 font-normal leading-5  mt-5 w-[600px]">
         A powerful tool designed to help you store, organize,<br/>
         <motion.p  style={{overflow:"hidden", whiteSpace:"nowrap"}}
         initial={{width:0}}
         animate={{width:"100%"}}
-        transition={{ease:easeInOut, duration:2,delay:2}}
+        transition={{ease:easeInOut, duration:1,delay:1}}
         
         
         >and revisit the resources that matter to you. </motion.p> 
@@ -106,11 +105,12 @@ async function submitdata() {
           style={{overflow:"hidden", whiteSpace:"nowrap"}}
           initial={{width:0}}
           animate={{width:"100%"}}
-          transition={{ease:easeInOut, duration:2,delay:3}}
+          transition={{ease:easeInOut, duration:1,delay:2}}
          > Stay productive and focused.</motion.p>
         </motion.div>
      </div>
-            <div className="bg-white pr-10 pl-10 pb-8 pt-6  rounded-lg border-[1px] shadow border-gray-200 ">
+            <motion.div initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}  transition={{duration:1}}  className="bg-white pr-10 pl-10 pb-8 pt-6  rounded-lg border-[1px] shadow border-gray-200 ">
           <div className=" lg:hidden block text-center text-5xl font-semibold text-[#5046E4] font-mono">  Memorix </div>   
             <div className="text-center text-xl font-regular mt-4 text-gray-600">  Sign up to add Links Images <br/> and documents </div> 
             <form className="mt-6 text-black" onSubmit={handleSubmit(onSubmit)}>
@@ -128,7 +128,7 @@ async function submitdata() {
     </button>
             </form>
             <div className="mt-4 flex justify-center">Already have a account?  <a href="/signin"> <span className="text-[#5046E4]"> Log in</span></a> </div>
-            </div>
+            </motion.div>
        
         </motion.div>
        
