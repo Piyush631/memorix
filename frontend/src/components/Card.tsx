@@ -63,7 +63,7 @@ export function Card({ title, link, type, id, createdAt, isDeletable }: CardProp
                     <a href={link} target="_blank">
                         <Shareicon  size="sm" />
                     </a>
-                    <div className="cursor-pointer " onClick={handleDelete}>
+                    <div className="cursor-pointer text-red-600" onClick={handleDelete}>
                        <span className="hover:bg-gray-700"> <RiDeleteBin5Line /> </span> 
                     </div>
                 </div>
