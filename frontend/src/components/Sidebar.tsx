@@ -13,6 +13,7 @@ import { Insta } from "../icons/Insta";
 import { Facebook } from "../icons/Facebook";
 import { Pinterest } from "../icons/Pintrest";
 import { fetchData, loadable, refreshState, selectContent } from "../Atoms/RecoilAtoms";
+import { Allicon } from "../icons/All";
 
 export function Sidebar({ open, setOpen }: { open: any; setOpen: any}) {
   const navigate = useNavigate();
@@ -76,7 +77,7 @@ export function Sidebar({ open, setOpen }: { open: any; setOpen: any}) {
 
       <div className="flex flex-col gap-3  ">
         <button onClick={() => setSelectedType("all")}>
-          <NavIcon icon={<RiGalleryView2 />} text="All" open={open} />
+          <NavIcon icon={<Allicon/>} text="All" open={open} />
         </button>
         <button onClick={() => setSelectedType("Youtube")}>
           <NavIcon icon={<Youtube />} text="Youtube" open={open} />
