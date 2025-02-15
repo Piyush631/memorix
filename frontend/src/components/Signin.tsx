@@ -75,7 +75,7 @@ function getPassword(e:any)
 return (
     <div  className="fixed h-screen w-full flex  justify-center items-center gap-12 bg-slate-100 ">
         <motion.div  initial={{ opacity: 0, scale: 0 }}
-    animate={{ opacity: 1, scale: 1 }}  transition={{duration:1}}  className="flex gap-4">
+    animate={{ opacity: 1, scale: 1 }}  transition={{duration:1}}  className="flex gap-6 items-center justify-center">
 
  <div className=" hidden h-screen  lg:flex flex-col  justify-center  ">
     <motion.div  
