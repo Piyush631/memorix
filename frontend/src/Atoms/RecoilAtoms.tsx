@@ -1,5 +1,6 @@
 import { atom, selector } from "recoil";
 import axios  from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 export const Username=atom({
@@ -42,15 +43,19 @@ export const fetchData=selector({
             const url = type === "all" 
         ? `https://memorix.onrender.com/api/v1/content`
         : `https://memorix.onrender.com/api/v1/refresh?type=${type}`;
-
+            const navigate=useNavigate();
         const response=await axios.get(url,{
             headers:{
                 "Authorization": localStorage.getItem("authorization"),
             }
            
         })
+        if(! localStorage.getItem("authorization"))
+        {
+            navigate("/signin")
+        }
       
-   console.log(response.data.data)
+ 
         return response.data.data
         }catch(error)
         {
