@@ -140,8 +140,8 @@ const[debounceSearchQuery,]=useRecoilState(query)
       <motion.div
         key={_id} 
         whileHover={{
-          scale: 1.06,
-          transition: { duration: 1 },
+          scale: 1.04,
+          transition: { duration: 0.5 },
         }}
       >
         <Card title={title} link={link} type={type} id={_id} createdAt={createdAt} isDeletable={true} />

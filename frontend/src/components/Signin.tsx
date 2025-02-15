@@ -74,8 +74,7 @@ function getPassword(e:any)
 }
 return (
     <div  className="fixed h-screen w-full flex  justify-center items-center gap-12 bg-slate-100 ">
-        <motion.div  initial={{ opacity: 0, scale: 0 }}
-    animate={{ opacity: 1, scale: 1 }}  transition={{duration:1}}  className="flex gap-6 items-center justify-center">
+
 
  <div className=" hidden h-screen  lg:flex flex-col  justify-center  ">
     <motion.div  
@@ -109,7 +108,8 @@ return (
      > Stay productive and focused.</motion.p>
     </motion.div>
  </div>
-        <div className="bg-white h-96 pr-12 pl-12 pb-5 md:pb-10 pt-8 lg:px-10 lg:py-8  rounded-lg border-[1px] shadow border-gray-200 ">
+        <motion.div   initial={{ opacity: 0, scale: 0 }}
+    animate={{ opacity: 1, scale: 1 }}  transition={{duration:1}} className="bg-white  pr-12 pl-12 pb-10 pt-8 lg:px-10 lg:py-8  rounded-lg border-[1px] shadow border-gray-200 ">
       <div className=" lg:hidden block text-center text-5xl font-semibold text-[#5046E4] font-mono">  Memorix </div>   
       <div className="text-center lg:mt-0 mt-3 text-3xl font-semibold">Welcome Back</div>
       <div className="text-center  mt-3 text-sm lg:mt-1 text-gray-400">Login to continue managing your resources</div>
@@ -126,9 +126,9 @@ return (
                  </button>
         </form>
         <div className="mt-4 flex justify-center text-gray-700">Did not have an account?  <a href="/signup"> <span className="text-[#5046E4]">&nbsp; Sign up</span></a></div>
-        </div>
-   
         </motion.div>
+   
+        
     </div>
    
   
