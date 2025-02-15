@@ -13,6 +13,8 @@ import { FaInstagram, FaPlus } from "react-icons/fa6";
 import { easeInOut, motion } from "motion/react"
 import { CiFacebook, CiYoutube } from "react-icons/ci"
 import { RiTwitterXFill } from "react-icons/ri"
+import { useNavigate } from "react-router-dom"
+
 interface dataTypes {
   title?:any,
   link:string,
@@ -29,7 +31,7 @@ export function MainContent() {
   const[isOpenShare,setIsOpenShare]=useState(false)
   const usersLoadable = useRecoilValueLoadable(fetchData);
   const[open,setOpen]=useState(false)
- 
+  const navigate=useNavigate();
   const[loading,setLoading]=useRecoilState(loadable)
 const[debounceSearchQuery,]=useRecoilState(query)
 
@@ -63,6 +65,10 @@ const[debounceSearchQuery,]=useRecoilState(query)
     }
     dynamicGreet();
     const interval=setInterval(dynamicGreet,60000)
+    if(! localStorage.getItem("authorization"))
+    {
+      navigate("/signin")
+    }
     console.log(localStorage.getItem("authorization"))
     return ()=>{
       clearInterval(interval)
