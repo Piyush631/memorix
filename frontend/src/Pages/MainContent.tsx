@@ -9,8 +9,10 @@ import { fetchData, loadable, query } from "../Atoms/RecoilAtoms"
 import { HeaderData } from "../components/Header"
 import { Popup } from "../components/Popup"
 import { LoadingPage } from "./LoadingPage"
-import { FaPlus } from "react-icons/fa6";
+import { FaInstagram, FaPlus } from "react-icons/fa6";
 import { easeInOut, motion } from "motion/react"
+import { CiFacebook, CiYoutube } from "react-icons/ci"
+import { RiTwitterXFill } from "react-icons/ri"
 interface dataTypes {
   title?:any,
   link:string,
@@ -152,9 +154,23 @@ const[debounceSearchQuery,]=useRecoilState(query)
 )}
 
 
-<div onClick={()=>{setIsOpen(!isOpen)}} className="h-44 w-64  cursor-pointer flex flex-col items-center justify-center bg-gray-300 rounded-xl gap-4">
-      <div className="text-3xl"><FaPlus  className="text-3xl"/> </div>
-      <div  className="text-xl">Click to Add a Content</div>
+<div onClick={()=>{setIsOpen(!isOpen)}} className="group h-44 w-64  cursor-pointer flex flex-col items-center justify-center bg-[#9B95FF] rounded-xl gap-2">
+<div
+          
+            
+          className=" transition-opacity duration-400 ease-linear  group-hover:opacity-100 opacity-0  h-9 w-36 flex items-center justify-center text-2xl gap-3 text-[#7871fa] bg-white rounded-lg ">
+              
+              <CiYoutube />
+              <FaInstagram />
+              <CiFacebook />
+              <RiTwitterXFill />
+
+
+          </div>
+      <div className="text-2xl h-13 w-13  bg-white rounded-full flex items-center justify-center"><FaPlus  className="text-3xl "/> </div>
+ <div className="text-xl font-semibold">
+ Add Content
+  </div> 
       </div>
   
      </div>
