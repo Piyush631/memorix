@@ -73,8 +73,10 @@ function getPassword(e:any)
     setPassword(e.target.value)
 }
 return (
-    <motion.div  initial={{ opacity: 0, scale: 0 }}
-    animate={{ opacity: 1, scale: 1 }}  transition={{duration:1}}  className="fixed h-screen w-full flex  justify-center items-center gap-12 bg-slate-100 ">
+    <div  className="fixed h-screen w-full flex  justify-center items-center gap-12 bg-slate-100 ">
+        <motion.div  initial={{ opacity: 0, scale: 0 }}
+    animate={{ opacity: 1, scale: 1 }}  transition={{duration:1}} >
+
  <div className=" hidden h-screen  lg:flex flex-col  justify-center  ">
     <motion.div  
     initial={{y:25, opacity:0}}
@@ -88,14 +90,14 @@ return (
     style={{overflow:"hidden", whiteSpace:"nowrap"}}
     initial={{width:0}}
     animate={{width:"100%"}}
-    transition={{ease:easeInOut, duration:2}}
+    transition={{ease:easeInOut, duration:1}}
     
     className="text-lg text-gray-700 font-normal leading-5  mt-5 w-[600px]">
     A powerful tool designed to help you store, organize,<br/>
     <motion.p  style={{overflow:"hidden", whiteSpace:"nowrap"}}
     initial={{width:0}}
     animate={{width:"100%"}}
-    transition={{ease:easeInOut, duration:2,delay:2}}
+    transition={{ease:easeInOut, duration:1,delay:1}}
     
     
     >and revisit the resources that matter to you. </motion.p> 
@@ -103,7 +105,7 @@ return (
       style={{overflow:"hidden", whiteSpace:"nowrap"}}
       initial={{width:0}}
       animate={{width:"100%"}}
-      transition={{ease:easeInOut, duration:2,delay:3}}
+      transition={{ease:easeInOut, duration:1,delay:2}}
      > Stay productive and focused.</motion.p>
     </motion.div>
  </div>
@@ -126,7 +128,8 @@ return (
         <div className="mt-4 flex justify-center text-gray-700">Did not have an account?  <a href="/signup"> <span className="text-[#5046E4]">&nbsp; Sign up</span></a></div>
         </div>
    
-    </motion.div>
+        </motion.div>
+    </div>
    
   
 )
