@@ -64,11 +64,11 @@ export function Card({ title, link, type, id, createdAt, isDeletable }: CardProp
                         <Shareicon  size="sm" />
                     </a>
                     <div className="cursor-pointer " onClick={handleDelete}>
-                       <span className="hover:bg-gray-500"> <RiDeleteBin5Line /> </span> 
+                       <span className="hover:bg-gray-700"> <RiDeleteBin5Line /> </span> 
                     </div>
                 </div>
             </div>
-        <div className="px-2  text-sm -mt-3 text-gray-300"> Date:- {create} </div>
+        <div className="px-2  text-sm -mt-3 text-gray-400"> Date:- {create} </div>
       
             <div  className="p-2 h-full flex justify-center items-center mt-3">
     {type === "Youtube" && (

@@ -68,7 +68,7 @@ function extractPath(url: any) {
                 </div>
   <input type="text"  value={isSharedUrl}   className="h-8 w-56 md:w-64  rounded-lg bg-gray-300"  readOnly></input>
 <div className="flex  gap-2">
-<button  onClick={handleCopy} className="bg-[#564bf0] text-white md:p-1 w-28 md:w-24  rounded-lg cursor-pointer ">
+<button  onClick={handleCopy} className="bg-[#564bf0] text-white  text-sm md:p-1 w-28 lg:w-24  lg:text-lg rounded-lg cursor-pointer ">
     {!copy ? "copy link" : "copied"}</button>
     {!stopshare ? <button  onClick={handleStopSharing} className="bg-[#564bf0] text-white md:p-1 w-28 md:w-24  rounded-lg cursor-pointer ">stop sharing</button>
     : " "}

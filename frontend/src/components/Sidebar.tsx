@@ -95,8 +95,8 @@ export function Sidebar({ open, setOpen }: { open: any; setOpen: any}) {
         </button>
       </div>
 
-      <div className="flex cursor-pointer ml-3 mt-24 gap-4 hover:bg-gray-300 hover:pl-2 hover:rounded-md">
-        <button className="text-2xl" onClick={logout}>
+      <div className="flex cursor-pointer ml-3 mt-24 gap-4 hover:bg-gray-300  hover:rounded-md">
+        <button className="text-2xl hover:bg-gray-300  hover:rounded-md:" onClick={logout}>
           <IoIosLogOut />
         </button>
         <div onClick={logout} className={`rounded-lg p-0.5 text-lg ${  !open ? "-translate-x-40" : ""} `}>
