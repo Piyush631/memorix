@@ -43,17 +43,14 @@ export const fetchData=selector({
             const url = type === "all" 
         ? `https://memorix.onrender.com/api/v1/content`
         : `https://memorix.onrender.com/api/v1/refresh?type=${type}`;
-            const navigate=useNavigate();
+         
         const response=await axios.get(url,{
             headers:{
                 "Authorization": localStorage.getItem("authorization"),
             }
            
         })
-        if(! localStorage.getItem("authorization"))
-        {
-            navigate("/signin")
-        }
+        
       
  
         return response.data.data
